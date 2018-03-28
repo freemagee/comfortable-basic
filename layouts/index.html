@@ -1,0 +1,15 @@
+{{ define "home" }}
+  <h2>{{.Title}}</h2>
+  <main>{{.Content}}</main>
+{{ end }}
+
+{{ define "main" }}
+  {{ range .Paginator.Pages }}
+    <article>
+      <h2>{{.Date.Format "2006-01-02"}} | {{.Title}}</h2>
+      {{ .Content }}
+    </article>
+  {{ end }}
+
+  {{ partial "pagination.html" .Paginator }}
+{{ end }}
