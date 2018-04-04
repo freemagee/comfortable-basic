@@ -10,7 +10,10 @@
     <article class="article">
       <header class="article__header">
         <h2 class="article__title">{{.Title}}</h2>
-        <time class="article__date" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "2006-01-02"}}</time>
+        <time class="article__date" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time>
+        {{ range $category := .Params.categories }}
+          {{ $category }}
+        {{ end }}
       </header>
       <div class="article__content">
         {{ .Content }}
