@@ -1,15 +1,23 @@
 {{ define "home" }}
-  <h2>{{.Title}}</h2>
-  <main>{{.Content}}</main>
+  <div class="site-intro">
+    <main class="site-intro__content">{{.Content}}</main>
+  </div>
 {{ end }}
 
 {{ define "main" }}
+  <div class="articles">
   {{ range .Paginator.Pages }}
-    <article>
-      <h2>{{.Date.Format "2006-01-02"}} | {{.Title}}</h2>
-      {{ .Content }}
+    <article class="article">
+      <header class="article__header">
+        <h2 class="article__title">{{.Title}}</h2>
+        <time class="article__date" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "2006-01-02"}}</time>
+      </header>
+      <div class="article__content">
+        {{ .Content }}
+      </div>
     </article>
   {{ end }}
+  </div>
 
   {{ partial "pagination.html" .Paginator }}
 {{ end }}

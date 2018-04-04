@@ -1,0 +1,46 @@
+﻿// -----------------------------------------------------------------------------
+// This file contains overall layout styles
+// -----------------------------------------------------------------------------
+
+.site-container {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__inner {
+    padding: 20px;
+  }
+}
+
+.site-header {
+  &__title {
+    margin: 1.5rem 0;
+    font-size: 48px;
+    font-family: $font__title;
+    font-weight: 700;
+  }
+}
+
+.site-intro {
+  margin-bottom: 40px;
+
+  &__content {
+    > p {
+      margin: 0;
+      font-size: $font__base-size;
+      font-family: $font__main;
+      line-height: $font__base-line-height;
+    }
+
+    > p + p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.site-footer {
+  &__copyright {
+    font-size: 16px;
+    font-family: $font__main;
+    line-height: $font__base-line-height;
+  }
+}

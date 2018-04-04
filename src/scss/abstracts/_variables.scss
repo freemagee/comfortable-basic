@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+// Colors
+
+// Common/repeated color
+$color__off-white: #f1f1f1 !default;
+$color__light: #ccc !default;
+$color__mid: #414141 !default;
+$color__dark: #333 !default;
+$color__darkest: #111 !default;
+
+$color__text-default: $color__darkest !default;
+$color__text-button: $color__off-white !default;
+$color__text-button-secondary: $color__off-white !default;
+$color__text-button-disabled: #000 !default;
+$color__text-link: #5d8aa8 !default;
+
+$color__background-button: #5d8aa8 !default;
+$color__background-button-secondary: #666 !default;
+$color__background-button-disabled: $color__light !default;
+
+$color__border-default: #ccc !default;
+$color__border-default-hover: #333 !default;
+$color__border-button-disabled: #bfbfbf !default;
+
+// Fonts
+$font__base-size: 20px;
+$font__base-line-height: $font__base-size * 1.4 !default;
+$font__main: 'Montserrat', sans-serif !default;
+$font__title: 'Fira Sans', sans-serif !default;
+
+// Settings
+$setting__default-border-radius: 3px !default;
+$setting__default-gap: 20px !default;

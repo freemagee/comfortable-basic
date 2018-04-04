@@ -1,0 +1,11 @@
+.pagination {
+  margin: 80px 0 40px;
+  padding-top: 20px;
+  border-top: 4px solid $color__off-white;
+
+  &__count {
+    font-size: $font__base-size;
+    font-family: $font__main;
+    line-height: $font__base-line-height;
+  }
+}

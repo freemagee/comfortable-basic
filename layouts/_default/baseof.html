@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
-  </head>
-  <body>
-    {{ partial "header.html" . }}
+<head>
+  <meta charset="utf-8">
+  <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
 
-    {{ block "home" . }}
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Fira+Sans:700" rel="stylesheet">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
+</head>
+<body>
+  <div class="site-container">
+    <div class="site-container__inner">
+      {{ partial "header.html" . }}
 
-    {{ end }}
+      {{ block "home" . }}
 
-    {{ block "main" . }}
+      {{ end }}
 
-    {{ end }}
+      {{ block "main" . }}
 
-    {{ partial "footer.html" . }}
-  </body>
+      {{ end }}
+
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+</body>
 </html>
