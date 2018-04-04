@@ -5,12 +5,20 @@
 
 // Colors
 
-// Common/repeated color
+// Shaded of black
 $color__off-white: #f1f1f1 !default;
-$color__light: #ccc !default;
-$color__mid: #414141 !default;
-$color__dark: #333 !default;
+$color__light: #ebebeb !default;
+$color__mid: #ccc !default;
+$color__dark: #414141 !default;
 $color__darkest: #111 !default;
+
+// Named colors
+$color__royal-blue: #4183D7 !default;
+$color__zest: #E67E22 !default;
+$color__cinnabar: #F03434 !default;
+
+// Component colors
+$color__theme: $color__cinnabar !default;
 
 $color__text-default: $color__darkest !default;
 $color__text-button: $color__off-white !default;
@@ -28,7 +36,7 @@ $color__border-button-disabled: #bfbfbf !default;
 
 // Fonts
 $font__base-size: 20px;
-$font__base-line-height: $font__base-size * 1.4 !default;
+$font__base-line-height: 1.4 !default;
 $font__main: 'Montserrat', sans-serif !default;
 $font__title: 'Fira Sans', sans-serif !default;
 

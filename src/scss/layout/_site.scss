@@ -17,18 +17,20 @@
     font-size: 48px;
     font-family: $font__title;
     font-weight: 700;
+    color: $color__darkest;
   }
 }
 
 .site-intro {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 
   &__content {
     > p {
       margin: 0;
-      font-size: $font__base-size;
+      font-size: 24px;
       font-family: $font__main;
       line-height: $font__base-line-height;
+      color: $color__dark;
     }
 
     > p + p {
@@ -42,5 +44,12 @@
     font-size: 16px;
     font-family: $font__main;
     line-height: $font__base-line-height;
+    color: $color__dark;
+    text-align: center;
+
+    > a {
+      color: $color__theme;
+      text-decoration: none;
+    }
   }
 }
