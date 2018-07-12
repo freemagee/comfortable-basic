@@ -8,8 +8,9 @@ const cssnext = require("postcss-cssnext");
 // Define other utilities
 const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
-const changed = require("gulp-changed");
 const cssnano = require("cssnano");
+const colors = require("ansi-colors");
+const beeper = require("beeper");
 const browserSync = require("browser-sync").create();
 
 const basePaths = {
@@ -23,24 +24,49 @@ const paths = {
     dest: `${basePaths.dest}css`
   }
 };
-const displayError = error => {
-  // Initial building up of the error
-  let errorString = `[${error.plugin}]`;
+// Error handler
+// Heavily inspired by: https://github.com/mikaelbr/gulp-notify/issues/81#issuecomment-100422179
+const reportError = function(error) {
+  console.log(error);
 
-  errorString += ` ${error.message.replace("\n", " ")}`; // Removes new line at the end
+  const messageOriginal = error.messageOriginal
+    ? error.messageOriginal
+    : "";
 
-  // If the error contains the filename or line number add it to the string
-  if (error.fileName) {
-    errorString += ` in ${error.fileName}`;
+  notify({
+    title: "Task Failed [" + error.plugin + "]",
+    message: messageOriginal,
+    sound: "Sosumi" // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+  }).write(error);
+
+  beeper(); // Beep 'sosumi' again
+
+  // Inspect the error object
+  //console.log(error);
+
+  // Easy error reporting
+  //console.log(error.toString());
+
+  // Pretty error reporting
+  let report = "";
+  let chalk = colors.white.bgRed;
+
+  report += chalk("TASK:") + " [" + error.plugin + "]\n";
+
+  if (error.file) {
+    report += chalk("FILE:") + " " + error.file + "\n";
   }
 
-  if (error.lineNumber) {
-    errorString += ` on line ${error.lineNumber}`;
+  if (error.line) {
+    report += chalk("LINE:") + " " + error.line + "\n";
   }
 
-  // This will output an error like the following:
-  // [gulp-sass] error message in file_name on line 1
-  notify(errorString).write("");
+  report += chalk("PROB:") + " " + error.message + "\n";
+
+  console.error(report);
+
+  // Prevent the 'watch' task from stopping
+  this.emit("end");
 };
 // A change event function, displays which file changed
 const changeEvent = evt => {
@@ -60,11 +86,10 @@ gulp.task("css", () => {
   return (
     gulp
       .src(paths.styles.files)
+      // Deal with errors, but prevent Gulp from stopping
       .pipe(
-        plumber(error => {
-          // If there is an error use the custom displayError function
-          displayError(error);
-          gulp.emit("end");
+        plumber({
+          errorHandler: reportError
         })
       )
       .pipe(sourcemaps.init())

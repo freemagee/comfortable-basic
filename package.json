@@ -9,6 +9,8 @@
   "author": "Neil Magee",
   "license": "ISC",
   "devDependencies": {
+    "ansi-colors": "^2.0.2",
+    "beeper": "^1.1.1",
     "browser-sync": "^2.24.5",
     "cssnano": "^4.0.1",
     "eslint": "^5.1.0",
