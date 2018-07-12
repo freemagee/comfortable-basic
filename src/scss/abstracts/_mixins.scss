@@ -13,3 +13,56 @@
     @content;
   }
 }
+
+@mixin basic-button() {
+  display: inline-block;
+  min-width: 10em;
+  padding: 1.2em 0;
+  margin-bottom: 0;
+  background-color: $color__background-button;
+  border-color: $color__border-button;
+  border-width: $setting__default-border-width;
+  border-style: solid;
+  border-radius: $setting__default-border-radius;
+  font-size: 0.875em;
+  font-family: $font__main;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  color: $color__text-button;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color__text-button-hover;
+    background-color: $color__background-button-hover;
+    border-color: $color__border-button-hover;
+    outline: 0;
+  }
+
+  &:active {
+    color: $color__text-button-active;
+    background-color: $color__background-button-active;
+    border-color: $color__border-button-active;
+    outline: 0;
+  }
+
+  &[disabled] {
+      color: $color__text-button-disabled;
+      background-color: $color__background-button-disabled;
+      border-color: $color__border-button-disabled;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $color__text-button-disabled;
+        background-color: $color__background-button-disabled;
+        border-color: $color__border-button-disabled;
+      }
+  }
+
+  &::before {
+      display: none;
+  }
+}

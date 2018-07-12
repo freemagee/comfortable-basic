@@ -1,4 +1,5 @@
 .pagination {
+  $self: &;
   margin: 3em 0 5em;
 
   &__count {
@@ -13,5 +14,24 @@
       margin: 0 auto 1em;
       background-color: $color__theme;
     }
+  }
+
+  &__ctrl {
+    display: flex;
+    margin-bottom: 3em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__older a {
+    @include basic-button();
+  }
+
+  &__newer a {
+    @include basic-button();
+  }
+
+  &__newer + #{ $self }__older {
+    margin-left: 1em;
   }
 }

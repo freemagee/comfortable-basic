@@ -9,7 +9,7 @@
   {{ range .Paginator.Pages }}
     <article class="article">
       <header class="article__header">
-        <h2 class="article__title">{{.Title}}</h2>
+        <a href="#" class="article__title">{{.Title}}</a>
         <time class="article__date" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time>
         {{ range $category := .Params.categories }}
           {{ $category }}

@@ -21,19 +21,21 @@ $color__cinnabar: hsl(0, 86.2%, 57.3%) !default;
 // Component colors
 $color__theme: $color__cinnabar !default;
 
-$color__text-default: $color__mid !default;
-$color__text-button: $color__off-white !default;
-$color__text-button-secondary: $color__off-white !default;
-$color__text-button-disabled: #000 !default;
-$color__text-link: #5d8aa8 !default;
+$color__text-default: $color__dark !default;
+$color__text-button: #fff !default;
+$color__text-button-hover: $color__theme !default;
+$color__text-button-active: $color__dark !default;
+$color__text-button-disabled: $color__mid !default;
 
-$color__background-button: #5d8aa8 !default;
-$color__background-button-secondary: #666 !default;
+$color__background-button: $color__theme !default;
+$color__background-button-hover: transparent !default;
+$color__background-button-active: transparent !default;
 $color__background-button-disabled: $color__light !default;
 
-$color__border-default: #ccc !default;
-$color__border-default-hover: #333 !default;
-$color__border-button-disabled: #bfbfbf !default;
+$color__border-button: $color__theme !default;
+$color__border-button-hover: $color__theme !default;
+$color__border-button-active: $color__dark !default;
+$color__border-button-disabled: $color__light !default;
 
 // Fonts
 $font__base-line-height: 1.45 !default;
