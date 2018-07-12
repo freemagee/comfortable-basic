@@ -1,20 +1,16 @@
 .pagination {
-  margin: 40px 0 80px;
+  margin: 3em 0 5em;
 
   &__count {
     display: block;
-    font-size: $font__base-size;
-    font-family: $font__main;
-    line-height: $font__base-line-height;
-    color: $color__dark;
     text-align: center;
 
     &::before {
       content: "";
       display: block;
-      width: 50px;
+      width: 2.5em;
       height: 4px;
-      margin: 0 auto 20px;
+      margin: 0 auto 1em;
       background-color: $color__theme;
     }
   }

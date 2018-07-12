@@ -3,5 +3,60 @@
 // -----------------------------------------------------------------------------
 
 body {
-  background: $color__light;
+  background: $color__off-white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+  color: $color__theme;
+  text-decoration: none;
+  border-bottom: $setting__default-border-width solid;
+  padding: 0.1em 0.2em 0;
+  margin: 0 -0.1em 1em;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+  }
+
+  &:active::before {
+    opacity: 0.2;
+    transition-duration: 0s;
+  }
+}
+
+sup a,
+sub a {
+  border-bottom: 0;
+
+  &::before {
+    display: none;
+  }
+}
+
+hr {
+  display: block;
+  width: 2.5em;
+  height: 4px;
+  margin: 0 0 1em 0;
+  border: 0;
+  background-color: $color__theme;
 }

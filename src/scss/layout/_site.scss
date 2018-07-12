@@ -3,18 +3,17 @@
 // -----------------------------------------------------------------------------
 
 .site-container {
-  max-width: 800px;
+  max-width: 50em;
   margin: 0 auto;
 
   &__inner {
-    padding: 20px;
+    padding: 1em;
   }
 }
 
 .site-header {
   &__title {
-    margin: 1.5rem 0;
-    font-size: 48px;
+    margin: 0;
     font-family: $font__title;
     font-weight: 700;
     color: $color__darkest;
@@ -22,29 +21,19 @@
 }
 
 .site-intro {
-  margin-bottom: 80px;
+  margin-top: $setting__default-gap * 2;
+  margin-bottom: $setting__default-gap * 4;
 
   &__content {
     > p {
-      margin: 0;
-      font-size: 24px;
-      font-family: $font__main;
-      line-height: $font__base-line-height;
-      color: $color__dark;
-    }
-
-    > p + p {
-      margin-top: 1rem;
+      font-size: 1.5em;
     }
   }
 }
 
 .site-footer {
   &__copyright {
-    font-size: 16px;
-    font-family: $font__main;
-    line-height: $font__base-line-height;
-    color: $color__dark;
+    margin: 0;
     text-align: center;
 
     > a {

@@ -5,22 +5,23 @@
 
 // Colors
 
-// Shaded of black
-$color__off-white: #f1f1f1 !default;
-$color__light: #ebebeb !default;
-$color__mid: #ccc !default;
-$color__dark: #414141 !default;
-$color__darkest: #111 !default;
+// Shades of black
+$color__off-white: #f5f5f5 !default;
+$color__lightest: #e0e0e0 !default;
+$color__light: #ccc !default;
+$color__mid: #8f8f8f !default;
+$color__dark: #474747 !default;
+$color__darkest: #1f1f1f !default;
 
 // Named colors
-$color__royal-blue: #4183D7 !default;
-$color__zest: #E67E22 !default;
-$color__cinnabar: #F03434 !default;
+$color__royal-blue: hsl(213.6, 65.2%, 54.9%) !default;
+$color__zest: hsl(28.2, 79.7%, 51.8%) !default;
+$color__cinnabar: hsl(0, 86.2%, 57.3%) !default;
 
 // Component colors
 $color__theme: $color__cinnabar !default;
 
-$color__text-default: $color__darkest !default;
+$color__text-default: $color__mid !default;
 $color__text-button: $color__off-white !default;
 $color__text-button-secondary: $color__off-white !default;
 $color__text-button-disabled: #000 !default;
@@ -35,11 +36,22 @@ $color__border-default-hover: #333 !default;
 $color__border-button-disabled: #bfbfbf !default;
 
 // Fonts
-$font__base-size: 20px;
-$font__base-line-height: 1.4 !default;
+$font__base-line-height: 1.45 !default;
 $font__main: 'Montserrat', sans-serif !default;
 $font__title: 'Fira Sans', sans-serif !default;
 
 // Settings
-$setting__default-border-radius: 3px !default;
-$setting__default-gap: 20px !default;
+$setting__default-border-radius: 4px !default;
+$setting__default-border-width: 4px !default;
+$setting__default-gap: 1em !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+  'xs': (max-width: 599px),
+  'small': (min-width: 600px),
+  'medium': (min-width: 960px),
+  'large': (min-width: 1400px),
+) !default;
