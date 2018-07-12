@@ -8,8 +8,6 @@ Do not use yet!
 
 ### TODO
 
-- Confirm all commonmark features are styled
 - Ability to deal with code blocks
-- Style pagination
 - Click through to post
-- Add some tag/categorisation to posts
+- Add some tag/categorisation handling to posts
