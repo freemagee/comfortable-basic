@@ -1,0 +1,13 @@
+<article class="post">
+  <header class="post__header">
+    <a href="{{ .RelPermalink }}" class="post__title">{{.Title}}</a>
+    <time class="post__date" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time>
+    {{ range $category := .Params.categories }}
+      {{ $category }}
+    {{ end }}
+  </header>
+  <div class="post__content">
+    {{ .Content }}
+    <!-- {{ .Summary }} -->
+  </div>
+</article>

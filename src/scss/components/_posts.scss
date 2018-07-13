@@ -1,8 +1,8 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to an article component.
-// -----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// This file contains all styles related to a single post component.
+// ----------------------------------------------------------------------------
 
-.articles {
+.posts {
   padding: 0 1em;
 
   @include respond-to('small') {
@@ -10,7 +10,8 @@
   }
 }
 
-.article {
+.post {
+  $self: &;
   padding: 1em;
   background: #fff;
   border-radius: $setting__default-border-radius;
@@ -18,6 +19,7 @@
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 2px rgba(0, 0, 0, 0.1);
 
   @include respond-to('small') {
+    margin-bottom: 2em;
     padding: 2em;
   }
 
@@ -48,5 +50,42 @@
 
   & + & {
     margin-top: 2em;
+  }
+
+  &__siblings {
+    display: flex;
+    margin-bottom: 3em;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__more {
+    padding-bottom: 1em;
+    flex: 2 100%;
+    text-align: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2.5em;
+      height: 4px;
+      margin: 0 auto 1em;
+      background-color: $color__theme;
+    }
+  }
+
+  &__previous {
+    @include basic-button();
+    flex: 0 1;
+  }
+
+  &__next {
+    @include basic-button();
+    flex: 0 1;
+  }
+
+  &__next + #{ $self }__previous {
+    margin-left: 1em;
   }
 }

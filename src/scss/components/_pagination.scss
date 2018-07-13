@@ -1,6 +1,6 @@
 .pagination {
   $self: &;
-  margin: 3em 0 5em;
+  margin: 2em 0 4em;
 
   &__count {
     display: block;
@@ -18,16 +18,16 @@
 
   &__ctrl {
     display: flex;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     align-items: center;
     justify-content: center;
   }
 
-  &__older a {
+  &__older {
     @include basic-button();
   }
 
-  &__newer a {
+  &__newer {
     @include basic-button();
   }
 
