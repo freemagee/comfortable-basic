@@ -1,17 +1,12 @@
 name = "Comfortable Basic"
 license = "MIT"
-licenselink = "https://github.com/freemagee/comfortable-basic/blob/master/LICENSE.md"
+licenselink = "https://github.com/freemagee/comfortable-basic/blob/master/LICENSE"
 description = "Comfortable Basic Hugo theme for simple blogging"
-homepage = "http://neilmagee.com"
-tags = ["blog"]
-features = []
-min_version=0.43
+homepage = https://github.com/freemagee/comfortable-basic"
+tags = ["Responsive", "Simple", "Clean", "Light", "White", "Blog"]
+features = ["Responsive", "One Column", "Blog"]
+min_version = 0.43
 
 [author]
   name = "Neil Magee"
   homepage = "http://neilmagee.com"
-
-[original]
-  name = "Comfortable Basic"
-  homepage = "https://github.com/freemagee/comfortable-basic"
-  repo = "https://github.com/freemagee/comfortable-basic"

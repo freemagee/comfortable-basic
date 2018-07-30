@@ -1,16 +1,25 @@
+{{ $baseurl := .Site.BaseURL }}
+
 {{ partial "header.html" . }}
 
-<header class="site-header">
-  <h1 class="site-header__title"><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-</header>
+{{ partial "site-title.html" . }}
 
 <main class="site-content site-content--post" role="main">
   <article class="post post--single">
     <header class="post__header">
-      <h2 class="post__title">{{.Title}}</h2>
-      <time class="post__date" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time>
-      <!-- <span class="post__wordcount" id="wordcount">{{ .WordCount }} Words</span> -->
-    </header>
+    <h2 href="{{ .RelPermalink }}" class="post__title post__title--mb">{{ .Title }}</h2>
+    <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      <span class="post__published">Published:</span>
+      <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
+    </time>
+    {{ if .Params.categories }}
+    <ul class="post__categories">
+      {{ range $index, $category := .Params.categories }}
+      <li class="post__category"><a href="{{ $baseurl }}/categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </header>
     <section class="post__content">
       {{ .Content }}
     </section>

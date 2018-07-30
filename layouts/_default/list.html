@@ -1,3 +1,18 @@
-{{ range .Data.Pages }}
-  {{ partial "li.html" . }}
-{{ end }}
+{{ partial "header.html" . }}
+
+{{ partial "site-title.html" . }}
+
+<main id="content" class="taxonomy">
+{{ $paginator := .Paginator }}
+  <h2 class="taxonomy__title">
+    <span class="taxonomy__type">{{ humanize .Type | singularize }}:</span>
+    <span class="taxonomy__name">{{ .Title }}</span>
+  </h2>
+  {{ range $index, $page := .Paginator.Pages }}
+      {{ .Render "li" }}
+  {{ end }}
+
+  {{ partial "pagination.html" $paginator }}
+</main>
+
+{{ partial "footer.html" . }}
