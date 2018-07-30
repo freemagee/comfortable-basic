@@ -1,0 +1,15 @@
+{{ $baseurl := .Site.BaseURL }}
+<section class="post {{ .Section }}">
+  <header class="post__header">
+    <a href="{{ .RelPermalink }}" class="post__title">{{.Title}}</a>
+    <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006-01-02" }}</time>
+    {{ if .Params.categories }}
+    {{ range $index, $category := .Params.categories }}
+      <span class="post__category"><a href="{{ $baseurl }}/categories/{{ . | urlize }}/">{{ $category }}</a></span>
+    {{ end }}
+    {{ end }}
+  </header>
+  <div class="post__content">
+    {{ .Content }}
+  </div>
+</section>

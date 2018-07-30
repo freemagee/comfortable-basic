@@ -1,3 +1,17 @@
-{{ range .Data.Pages }}
-  {{ partial "li.html" . }}
-{{ end }}
+{{ partial "header.html" . }}
+
+<header class="site-header">
+  <h1 class="site-header__title"><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
+</header>
+
+<main id="content">
+{{ $paginator := .Paginator }}
+  <h2 class="post-title">Category: <em>{{ .Title }}</em></h2>
+    {{ range $index, $page := .Paginator.Pages }}
+        {{ .Render "li" }}
+    {{ end }}
+
+    {{ partial "pagination.html" $paginator }}
+</main>
+
+{{ partial "footer.html" . }}

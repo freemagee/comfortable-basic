@@ -1,3 +1,4 @@
+{{ $baseurl := .Site.BaseURL }}
 {{ partial "header.html" . }}
 
 <header class="site-header">
@@ -8,7 +9,12 @@
   <article class="post post--single">
     <header class="post__header">
       <h2 class="post__title">{{.Title}}</h2>
-      <time class="post__date" datetime="{{.Date.Format "2006-01-02"}}">{{ .Date.Format "2006-01-02" }}</time>
+      <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006-01-02" }}</time>
+      {{if .Params.categories }}
+      {{ range $index, $category := .Params.categories }}
+        <span class="post__category"><a href="{{ $baseurl }}/categories/{{ . | urlize }}/">{{ $category }}</a></span>
+      {{ end }}
+      {{ end }}
       <!-- <span class="post__wordcount" id="wordcount">{{ .WordCount }} Words</span> -->
     </header>
     <section class="post__content">

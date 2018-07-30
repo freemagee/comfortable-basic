@@ -7,8 +7,8 @@
 {{ partial "home-content.html" . }}
 
 <div class="posts posts--home">
-  {{ range .Paginator.Pages }}
-    {{ partial "li.html" . }}
+  {{ range $index, $page := .Paginator.Pages }}
+    {{ partial "home-li.html" }}
   {{ end }}
 </div>
 
