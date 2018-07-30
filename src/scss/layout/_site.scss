@@ -12,21 +12,38 @@
 }
 
 .site-header {
+  $self: &;
+
   &__title {
     margin: 0;
     font-family: $font__title;
     font-weight: 700;
+  }
 
-    > a {
-      padding: 0;
-      margin: 0;
-      color: $color__darkest;
-      border-bottom: 0;
+  &__link{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    color: $color__darkest;
 
-      &::before {
-        display: none;
-      }
+    &:hover > #{ $self }__icon #{ $self }__icon-flash,
+    &:focus > #{ $self }__icon #{ $self }__icon-flash {
+      fill: $color__theme;
     }
+  }
+
+  &__icon {
+    flex: 0 0 36px;
+  }
+
+  &__icon-flash {
+    fill: $color__darkest;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &__name {
+    flex: 0;
   }
 }
 

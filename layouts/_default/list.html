@@ -1,17 +1,18 @@
 {{ partial "header.html" . }}
 
-<header class="site-header">
-  <h1 class="site-header__title"><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-</header>
+{{ partial "site-title.html" . }}
 
-<main id="content">
+<main id="content" class="taxonomy">
 {{ $paginator := .Paginator }}
-  <h2 class="post-title">Category: <em>{{ .Title }}</em></h2>
-    {{ range $index, $page := .Paginator.Pages }}
-        {{ .Render "li" }}
-    {{ end }}
+  <h2 class="taxonomy__title">
+    <span class="taxonomy__type">{{ humanize .Type | singularize }}:</span>
+    <span class="taxonomy__name">{{ .Title }}</span>
+  </h2>
+  {{ range $index, $page := .Paginator.Pages }}
+      {{ .Render "li" }}
+  {{ end }}
 
-    {{ partial "pagination.html" $paginator }}
+  {{ partial "pagination.html" $paginator }}
 </main>
 
 {{ partial "footer.html" . }}

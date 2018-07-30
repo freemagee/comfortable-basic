@@ -26,19 +26,104 @@
   &__header {
     margin: 0 0 1em 0;
     color: $color__theme;
+
+    &--compact {
+      display: flex;
+      margin: 0;
+    }
   }
 
   &__title {
-    margin: 0 0 0.5em 0;
+    display: block;
+    margin: 0;
     font-size: 1.8em;
     font-family: $font__title;
     font-weight: 700;
+
+    &--flex {
+      flex: 1;
+    }
+
+    &--mb {
+      margin-bottom: 0.5em;
+    }
+
+    &:hover > #{ $self }__title-icon #{ $self }__title-icon-link,
+    &:focus > #{ $self }__title-icon #{ $self }__title-icon-link {
+      fill: $color__theme;
+    }
+  }
+
+  &__title-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__title-icon-link {
+    fill: transparent;
+    transition: fill 0.3s ease-in-out;
   }
 
   &__date {
-    display: block;
+    display: inline-block;
+    margin-right: $setting__default-gap * 2;
     font-size: 0.75em;
     color: $color__mid;
+
+    &--flex {
+      display: flex;
+      flex: 0;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__published {
+    font-weight: 700;
+    color: $color__dark;
+  }
+
+  &__published-value {
+    white-space: nowrap;
+  }
+
+  &__categories {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__category {
+    display: inline-block;
+  }
+
+  &__category + #{ $self }__category {
+    margin-left: 0.25em;
+  }
+
+  &__category-link {
+    margin: 0;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #fff;
+    background-color: $color__mid;
+    border: 2px solid $color__mid;
+    border-radius: 3px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      color: $color__mid;
+      background-color: transparent;
+    }
   }
 
   &__content {

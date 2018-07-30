@@ -1,0 +1,13 @@
+.taxonomy {
+  &__title {
+    margin: 2em 0 1em 0;
+  }
+
+  &__type {
+    color: $color__dark;
+  }
+
+  &__name {
+    color: $color__mid;
+  }
+}

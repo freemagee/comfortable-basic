@@ -1,14 +1,13 @@
 {{ partial "header.html" . }}
 
-<header class="site-header">
-  <h1 class="site-header__title"><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-</header>
+{{ partial "site-title.html" . }}
 
 {{ partial "home-content.html" . }}
 
 <div class="posts posts--home">
   {{ range $index, $page := .Paginator.Pages }}
-    {{ partial "home-li.html" }}
+    {{ partial "home-li.html" . }}
+    {{/* .Render "li" */}}
   {{ end }}
 </div>
 
