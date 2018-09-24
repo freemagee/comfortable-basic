@@ -25,12 +25,12 @@
     {{ if .Params.categories }}
     <ul class="post__categories">
       {{ range $index, $category := .Params.categories }}
-      <li class="post__category"><a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
+      <li class="post__category"><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
       {{ end }}
     </ul>
     {{ end }}
   </header>
-  <div class="post__content">
+  <div class="post-content">
     {{ .Content }}
   </div>
 </section>
