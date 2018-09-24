@@ -13,12 +13,8 @@
 
   <main id="content" class="taxonomy">
     <article>
-
-      <h1 class="taxonomy__title">
-        <span class="taxonomy__type">{{ humanize .Type | singularize }}:</span>
-        <span class="taxonomy__name">{{ .Title }}</span>
-      </h1>
-
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
     </article>
 
     {{ range .Pages }}

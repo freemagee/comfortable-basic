@@ -1,8 +1,45 @@
 {{ define "title" }}
-  <!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example-->
-  {{ .Title }} &ndash; {{ .Site.Title }}
+  {{ .Title }}
+    {{ if .Site.Params.titleSeperator }}
+      {{ .Site.Params.titleSeperator | safeHTML }}
+    {{ else }}
+      -
+    {{ end }}
+  {{ .Site.Title }}
 {{ end }}
+
 {{ define "main" }}
-  <h1>SINGLE PAGE = {{ .Title }}</h1>
-  {{ .Content }}
+  {{ partial "page-title.html" . }}
+
+  <main class="site-content site-content--post" role="main">
+    <article class="post post--single">
+      <header class="post__header">
+      <h1 href="{{ .RelPermalink }}" class="post__title post__title--mb">{{ .Title }}</h1>
+      <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+        <span class="post__published">Published:</span>
+        <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
+      </time>
+      {{ if .Params.categories }}
+      <ul class="post__categories">
+        {{ range $index, $category := .Params.categories }}
+        <li class="post__category"><a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </header>
+      <section class="post__content">
+        {{ .Content }}
+      </section>
+    </article>
+  </main>
+
+  <div class="post__siblings">
+    <span class="post__more">More posts</span>
+    {{ with .NextInSection }}
+      <a class="post__next" href="{{ .Permalink }}">&lt; {{.Title}}</a>
+    {{ end }}
+    {{ with .PrevInSection }}
+      <a class="post__previous" href="{{ .Permalink }}">{{.Title}} &gt;</a>
+    {{ end }}
+  </div>
 {{ end }}

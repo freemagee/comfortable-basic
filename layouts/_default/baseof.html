@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+
+  <link href="{{ .Site.BaseURL }}images/favicon/favicon-16x16.png" rel="shortcut icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Fira+Sans:700" rel="stylesheet">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
 </head>
-
 <body>
-  <!-- Code that all your templates share, like a header -->
-  {{ block "main" . }}
-  <!-- The part of the page that begins to differ between templates -->
-  {{ end }}
-  {{ block "footer" . }}
-  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
-</body>
+  <div class="site-container">
+    <div class="site-container__inner">
+      {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+      {{ end }}
+      <footer class="site-footer">
+        <div class="site-footer__inner">
+          <p class="site-footer__copyright">&copy; {{ now.Format "2006"}} <a href="{{ $.Site.Params.AuthorWebsite }}">{{ $.Site.Params.Author }}</a>. Icons from <a href="http://entypo.com">Entypo+</a>.</p>
+        </div>
+      </footer>
 
+    </div>
+  </div>
+</body>
 </html>

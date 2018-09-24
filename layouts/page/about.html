@@ -1,0 +1,17 @@
+{{ define "title" }}
+  {{ .Title }}
+    {{ if .Site.Params.titleSeperator }}
+      {{ .Site.Params.titleSeperator | safeHTML }}
+    {{ else }}
+      -
+    {{ end }}
+  {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "page-title.html" . }}
+
+  <!-- ABOUT PAGE -->
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+{{ end }}
