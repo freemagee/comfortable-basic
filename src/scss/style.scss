@@ -12,8 +12,7 @@
 // 3. Base stuff
 @import
   'base/elements',
-  'base/typography',
-  'base/tables';
+  'base/typography';
 
 // 4. Layout-related sections
 @import
@@ -21,6 +20,10 @@
 
 // 5. Components
 @import
-  'components/posts',
-  'components/taxonomies',
   'components/pagination';
+
+// 6. Posts
+@import
+  'posts/posts',
+  'posts/post',
+  'posts/post-content';

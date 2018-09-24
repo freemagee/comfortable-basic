@@ -17,7 +17,9 @@
   &__title {
     margin: 0;
     font-family: $font__title;
+    font-size: 2.441em;
     font-weight: 700;
+    line-height: 1.2;
   }
 
   &__link{
@@ -53,6 +55,7 @@
 
   &__content {
     > p {
+      margin: 0 0 1.3em;
       font-size: 1.5em;
     }
   }
@@ -66,6 +69,23 @@
     @include respond-to('small') {
       padding: 0 3em;
     }
+  }
+}
+
+.site-list {
+  &__title {
+    margin: 2em 0 1em 0;
+    font-size: 1.953em;
+    font-family: $font__title;
+    line-height: 1.2;
+  }
+
+  &__type {
+    color: $color__dark;
+  }
+
+  &__name {
+    color: $color__mid;
   }
 }
 

@@ -1,15 +1,3 @@
-// ----------------------------------------------------------------------------
-// This file contains all styles related to a single post component.
-// ----------------------------------------------------------------------------
-
-.posts {
-  padding: 0 1em;
-
-  @include respond-to('small') {
-    padding: 0 3em;
-  }
-}
-
 .post {
   $self: &;
   padding: 1em;
@@ -40,6 +28,7 @@
     font-family: $font__title;
     font-weight: 700;
     line-height: 1.2;
+    color: $color__dark;
 
     &--flex {
       flex: 1;
@@ -125,13 +114,6 @@
       color: $color__mid;
       background-color: transparent;
     }
-  }
-
-  &__content {
-    // Remove margins on first and last elements
-    // Ref: https://css-tricks.com/snippets/css/remove-margins-first-element/
-    > :first-child { margin-top: 0 !important; margin-left: 0 !important; }
-    > :last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
   }
 
   & + & {
