@@ -16,20 +16,20 @@
 
 @mixin basic-button() {
   display: inline-block;
-  min-width: 10em;
-  padding: 1.2em 0;
+  padding: 1rem 0.5rem;
   margin-bottom: 0;
   background-color: $color__background-button;
   border-color: $color__border-button;
   border-width: $setting__default-border-width;
   border-style: solid;
   border-radius: $setting__default-border-radius;
-  font-size: 0.707em;
+  font-size: 1em;
   font-family: $font__main;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   line-height: 1;
+  white-space: nowrap;
   color: $color__text-button;
   cursor: pointer;
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;

@@ -3,9 +3,9 @@
 // ----------------------------------------------------------------------------
 
 .posts {
-  padding: 0 1em;
+  padding: 0 1rem;
 
   @include respond-to('small') {
-    padding: 0 3em;
+    padding: 0 3rem;
   }
 }
