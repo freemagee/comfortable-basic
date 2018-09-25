@@ -7,8 +7,17 @@
   }
 
   &__content {
-    p {
-      margin: 0 0 1.3em 0;
+    p, ul, ol {
+      margin: 0 1em 1.3em;
+
+      @include respond-to('small') {
+        margin: 0 3em 1.3em;
+      }
+    }
+
+    p:first-of-type {
+      margin: 0 0 1.3em;
+      font-size: 1.5em;
     }
   }
 }

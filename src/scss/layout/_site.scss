@@ -91,6 +91,14 @@
   &__name {
     color: $color__mid;
   }
+
+  &__intro {
+    margin-bottom: 4em;
+
+    p {
+      margin: 0 0 1.3em 0;
+    }
+  }
 }
 
 .site-footer {

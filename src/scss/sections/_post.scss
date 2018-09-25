@@ -11,6 +11,10 @@
     padding: 2em;
   }
 
+  &--compact {
+    display: block;
+  }
+
   &__header {
     margin: 0 0 1em 0;
     color: $color__theme;

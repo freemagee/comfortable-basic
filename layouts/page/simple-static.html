@@ -5,12 +5,10 @@
 {{ define "main" }}
   {{ partial "page-title.html" . }}
 
-  <div class="site-content">
-    <article class="page page--simple">
-      <header>
-        <h1 class="page__title">{{- .Title -}}</h1>
-      </header>
-      <section class="page__content">{{ .Content }}</section>
-    </article>
-  </div>
+  <article class="page page--simple">
+    <header>
+      <h1 class="page__title">{{- .Title -}}</h1>
+    </header>
+    <section class="page__content">{{ .Content }}</section>
+  </article>
 {{ end }}

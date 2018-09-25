@@ -1,10 +1,10 @@
-<section class="post post--compact post--section-{{ .Section }}">
+<a href="{{ .RelPermalink }}" class="post post--compact post--section-{{ .Section }}">
   <header class="post__header post__header--compact">
     <time class="post__date post__date--flex" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
       <span class="post__published">Published:</span>
       <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
     </time>
-    <a href="{{ .RelPermalink }}" class="post__title">
+    <h3 class="post__title">
       {{ .Title }}
       <span class="post__title-icon">
         <svg version="1.1" id="Link" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -21,6 +21,6 @@
           C18,4.861,17.605,3.917,16.891,3.207z" class="post__title-icon-link" />
         </svg>
       </span>
-    </a>
+    </h3>
   </header>
-</section>
+</a>
