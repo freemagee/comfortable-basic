@@ -7,10 +7,12 @@
   <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
   <meta name="description" content="{{ .Site.Params.MetaDescription }}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="{{ .Site.Params.Author }}">
+  <meta name="referrer" content="no-referrer-when-downgrade">
 
   <link href="{{ .Site.BaseURL }}images/favicon/favicon-16x16.png" rel="shortcut icon" type="image/png">
 
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Fira+Sans:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700" rel="stylesheet">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
 </head>
 <body>
@@ -23,7 +25,7 @@
       </main>
       <footer class="site-footer">
         <div class="site-footer__inner">
-          <p class="site-footer__copyright">&copy; {{ now.Format "2006"}} <a href="{{ .Site.Params.AuthorWebsite }}">{{ .Site.Params.Author }}</a>. Icons from <a href="http://entypo.com">Entypo+</a>.</p>
+          <p class="site-footer__copyright">&copy; {{ now.Format "2006" }} <a href="{{ .Site.Params.AuthorWebsite }}">{{ .Site.Params.Author }}</a>. Icons from <a href="http://entypo.com">Entypo+</a>.</p>
         </div>
       </footer>
 
