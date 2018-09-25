@@ -16,9 +16,11 @@
 <body>
   <div class="site-container">
     <div class="site-container__inner">
-      {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-      {{ end }}
+      <main role="main">
+        {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+        {{ end }}
+      </main>
       <footer class="site-footer">
         <div class="site-footer__inner">
           <p class="site-footer__copyright">&copy; {{ now.Format "2006"}} <a href="{{ .Site.Params.AuthorWebsite }}">{{ .Site.Params.Author }}</a>. Icons from <a href="http://entypo.com">Entypo+</a>.</p>

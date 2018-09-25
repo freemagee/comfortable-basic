@@ -11,17 +11,26 @@
 {{ define "main" }}
   {{ partial "page-title.html" . }}
 
-  <main id="content" class="site-list site-list--taxonomy">
-    <article>
-      <h1 class="site-list__title">
-        <span class="site-list__type">{{ humanize .Type | singularize }}:</span>
-        <span class="site-list__name">{{ .Title }}</span>
-      </h1>
-    </article>
-
-    {{ range .Pages }}
-        {{ .Render "summary" }}
+  <div class="site-content">
+    <article class="site-list">
+      <header>
+        <h1 class="site-list__title">
+        {{ if ne (.Type) ("posts") }}
+          <!-- Only want the type to appear for taxonomy lists -->
+          <span class="site-list__type">{{ humanize .Type | singularize }}:</span>
+        {{ end }}
+          <span class="site-list__name">{{ .Title }}</span>
+        </h1>
+      </header>
+    {{ if .Content }}
+      <!-- Show intro content if a _index.md is present for the type -->
+      <section class="site-list__intro">{{ .Content }}</section>
     {{ end }}
 
-  </main>
+      {{ range .Pages }}
+          {{ .Render "summary" }}
+      {{ end }}
+
+    </article>
+  </div>
 {{ end }}
