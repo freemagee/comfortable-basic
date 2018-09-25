@@ -1,0 +1,14 @@
+.page {
+  &__title {
+    font-family: $font__title;
+    font-size: 1.953em;
+    line-height: 1.2;
+    margin: 2em 0 1em;
+  }
+
+  &__content {
+    p {
+      margin: 0 0 1.3em 0;
+    }
+  }
+}

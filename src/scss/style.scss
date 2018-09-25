@@ -22,8 +22,12 @@
 @import
   'components/pagination';
 
-// 6. Posts
+// 6. Sections
 @import
-  'posts/posts',
-  'posts/post',
-  'posts/post-content';
+  'sections/posts',
+  'sections/post',
+  'sections/post-content';
+
+// 7. Sections
+@import
+  'pages/page';
