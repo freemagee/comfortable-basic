@@ -10,42 +10,46 @@
 
   h1, h2, h3, h4 {
     margin: 1.414em 0 0.5em;
-    font-weight: inherit;
     font-family: $font__title;
     line-height: 1.2;
     color: $color__darkest;
   }
 
   h1 {
-    font-size: 2.441em;
+    font-size: 2.827em;
+    font-weight: 700;
   }
 
   h2 {
-    font-size: 1.953em;
+    font-size: 1.999em;
+    font-weight: 700;
   }
 
   h3 {
-    font-size: 1.563em;
+    font-size: 1.414em;
+    font-weight: 700;
   }
 
   h4 {
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: 700;
   }
 
   h5, h6 {
     margin: 1.414em 0 0.5em;
-    font-weight: inherit;
     font-family: $font__title;
     line-height: 1.2;
   }
 
   h5 {
-    font-size: 1.1em;
+    font-size: 0.707em;
+    font-weight: 600;
     color: $color__dark;
   }
 
   h6 {
-    font-size: 1.1em;
+    font-size: 0.707em;
+    font-weight: 600;
     color: $color__mid;
   }
 
@@ -55,12 +59,12 @@
     padding: 0 0 0 1.3em;
 
     li {
-      font-size: 1rem;
+      font-size: 1em;
     }
   }
 
   small {
-    font-size: 0.8em;
+    font-size: 0.5em;
   }
 
   strong {
@@ -73,6 +77,11 @@
 
   del {
     color: $color__mid;
+  }
+
+  sub,
+  sup {
+    font-size: 0.5em;
   }
 
   blockquote {
