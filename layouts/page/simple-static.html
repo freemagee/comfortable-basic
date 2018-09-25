@@ -1,11 +1,5 @@
 {{ define "title" }}
-  {{- .Site.Title -}}
-    {{ if .Site.Params.titleSeperator }}
-      {{- " " -}} {{- .Site.Params.titleSeperator | safeHTML -}} {{- " " -}}
-    {{ else }}
-      -
-    {{ end }}
-  {{- .Title -}}
+  {{ partial "title-override.html" . }}
 {{ end }}
 
 {{ define "main" }}

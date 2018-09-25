@@ -1,0 +1,7 @@
+{{- .Site.Title -}}
+  {{ if .Site.Params.titleSeperator }}
+    {{- " " -}} {{- .Site.Params.titleSeperator | safeHTML -}} {{- " " -}}
+  {{ else }}
+    -
+  {{ end }}
+{{- .Title -}}
