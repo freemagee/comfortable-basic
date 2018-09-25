@@ -28,10 +28,14 @@
     font-family: $font__title;
     font-weight: 700;
     line-height: 1.2;
-    color: $color__dark;
 
     &--flex {
       flex: 1;
+    }
+
+    &--single {
+      margin-bottom: 0.5em;
+      color: $color__dark;
     }
 
     &--mb {

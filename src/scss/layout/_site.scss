@@ -62,13 +62,11 @@
 }
 
 .site-content {
-  &--post {
-    margin-top: 4em;
-    padding: 0 1em;
+  margin-top: 4em;
+  padding: 0 1em;
 
-    @include respond-to('small') {
-      padding: 0 3em;
-    }
+  @include respond-to('small') {
+    padding: 0 3em;
   }
 }
 
