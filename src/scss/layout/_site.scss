@@ -60,6 +60,17 @@
 .site-intro {
   padding: 2rem 0 4rem;
 
+  &__header {}
+
+  &__title {
+    margin: 0 0 1.3em;
+    font-size: 1.414em;
+
+    @include mappy-bp(medium) {
+      font-size: 1.999em;
+    }
+  }
+
   &__content {
     > p {
       margin: 0 0 1.3em;
