@@ -47,12 +47,10 @@ $setting__default-border-radius: 4px !default;
 $setting__default-border-width: 4px !default;
 
 /// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-/// @see {mixin} respond-to
+/// @see https://github.com/zellwk/mappy-breakpoints
 $breakpoints: (
-  'xs': (max-width: 599px),
-  'small': (min-width: 600px),
-  'medium': (min-width: 960px),
-  'large': (min-width: 1400px),
+  'xs': 599px,
+  'small': 600px,
+  'medium': 960px,
+  'large': 1400px,
 ) !default;

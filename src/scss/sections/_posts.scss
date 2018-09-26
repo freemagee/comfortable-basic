@@ -5,7 +5,7 @@
 .posts {
   padding: 0 1rem;
 
-  @include respond-to('small') {
+  @include mappy-bp(small) {
     padding: 0 3rem;
   }
 }

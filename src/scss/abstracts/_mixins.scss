@@ -2,18 +2,6 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-@mixin respond-to($breakpoint) {
-  $query: map-get($breakpoints, $breakpoint);
-
-  @if not $query {
-    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
-  }
-
-  @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
-    @content;
-  }
-}
-
 @mixin basic-button() {
   display: inline-block;
   padding: 1rem 0.5rem;

@@ -65,7 +65,7 @@
       margin: 0 0 1.3em;
       font-size: 1.414em;
 
-      @include respond-to('small') {
+      @include mappy-bp(medium) {
         font-size: 1.999em;
       }
     }
@@ -79,7 +79,7 @@
 .site-content {
   padding: 2rem 1rem;
 
-  @include respond-to('small') {
+  @include mappy-bp(small) {
     padding: 2rem 3rem;
   }
 }
