@@ -59,7 +59,7 @@
 
   &__title-icon-link {
     fill: transparent;
-    transition: fill 0.3s ease-in-out;
+    transition: fill 0.2s ease-in-out;
   }
 
   &__date {
@@ -109,7 +109,7 @@
     background-color: $color__mid;
     border: 2px solid $color__mid;
     border-radius: 3px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
     &::before {
       display: none;
