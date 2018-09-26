@@ -18,8 +18,7 @@
   align-items: center;
   justify-content: space-between;
 
-  &__ident {
-  }
+  &__ident {}
 
   &__nav {
     display: flex;
@@ -35,10 +34,26 @@
     font-weight: 700;
     line-height: 1.2;
     color: $color__theme;
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $color__dark;
+    }
   }
 
   &__nav-item {
     font-size: 1em;
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $color__dark;
+    }
+
+    &.active {
+
+    }
   }
 }
 
@@ -48,7 +63,11 @@
   &__content {
     > p {
       margin: 0 0 1.3em;
-      font-size: 1.999em;
+      font-size: 1.414em;
+
+      @include respond-to('small') {
+        font-size: 1.999em;
+      }
     }
 
     > p:last-child {
