@@ -7,7 +7,6 @@
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 2px rgba(0, 0, 0, 0.1);
 
   @include respond-to('small') {
-    margin-bottom: 2em;
     padding: 2rem;
   }
 
@@ -65,7 +64,7 @@
 
   &__date {
     display: inline-block;
-    margin-right: $setting__default-gap * 2;
+    margin-right: 2em;
     font-size: 0.707em;
     color: $color__mid;
 
@@ -130,7 +129,6 @@
 
   &__siblings {
     display: flex;
-    margin-bottom: 3em;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;

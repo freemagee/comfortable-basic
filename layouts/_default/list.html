@@ -3,8 +3,6 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "page-title.html" . }}
-
   <div class="site-content">
     <article class="site-list">
       <header>
@@ -16,15 +14,16 @@
           <span class="site-list__name">{{ .Title }}</span>
         </h1>
       </header>
-    {{ if .Content }}
+      {{ if .Content }}
       <!-- Show intro content if a _index.md is present for the type -->
       <section class="site-list__intro">{{ .Content }}</section>
-    {{ end }}
+      {{ end }}
 
+      <section class="site-list__list">
       {{ range .Pages }}
           {{ .Render "summary" }}
       {{ end }}
-
+      </section>
     </article>
   </div>
 {{ end }}
