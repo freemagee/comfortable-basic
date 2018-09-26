@@ -8,7 +8,18 @@ Comfortable Basic is a modern, simple Hugo theme. Intended for a blog like site.
 - Emphasis on readability
 - Lightweight
 
-## Example HUGO config toml
+## Installation
+
+Inside the folder of your Hugo site run:
+
+```bash
+$ cd themes
+$ git clone https://github.com/freemagee/comfortable-basic
+```
+
+*For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.*
+
+## Example HUGO site config toml
 
 ```toml
 baseURL= "https://example.com"
@@ -35,4 +46,7 @@ pluralizeListTitles = false
 - Optional logo support
 - Update Gulp tasks
 - Improve "Page" styling
-- Create example site with dummy content
+- Use config description on homepage / or use _index.md title
+- Make pagination more visible, to aid user navigation
+- Mobile styling needs work: typography and spacing
+- Host dummy site on gh-pages branch
