@@ -1,0 +1,63 @@
+.post-siblings {
+  $self: &;
+  display: flex;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__more {
+    padding-bottom: 1rem;
+    flex: 2 100%;
+    text-align: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2.5em;
+      height: 4px;
+      margin: 0 auto 1em;
+      background-color: $color__theme;
+    }
+  }
+
+  &__nav {
+    @include basic-button();
+    flex: 0 1;
+
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-previous,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-previous {
+      fill: $color__theme;
+    }
+
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-next,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-next {
+      fill: $color__theme;
+    }
+  }
+
+  &__nav + #{ $self }__nav {
+    margin-left: 1em;
+  }
+
+  &__nav--previous {
+    padding-left: 1rem;
+  }
+
+  &__nav--next {
+    padding-right: 1rem;
+  }
+
+  &__nav-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
+  &__nav-icon-previous,
+  &__nav-icon-next {
+    fill: #fff;
+    transition: fill 0.2s ease-in-out;
+  }
+}

@@ -75,12 +75,13 @@
   }
 
   &__date {
-    margin: 0 0 1rem 0;
+    display: block;
+    padding: 0 0 1rem 0;
     font-size: 1em;
     color: $color__mid;
 
     @include mappy-bp(medium) {
-      margin: 0 2rem 0 0;
+      padding: 0 2rem 0 0;
       font-size: 0.707em;
     }
   }
@@ -139,43 +140,6 @@
   & + & {
     margin-top: 2em;
   }
-
-  &__siblings {
-    display: flex;
-    padding-top: 2rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  &__more {
-    padding-bottom: 1rem;
-    flex: 2 100%;
-    text-align: center;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 2.5em;
-      height: 4px;
-      margin: 0 auto 1em;
-      background-color: $color__theme;
-    }
-  }
-
-  &__previous {
-    @include basic-button();
-    flex: 0 1;
-  }
-
-  &__next {
-    @include basic-button();
-    flex: 0 1;
-  }
-
-  &__next + #{ $self }__previous {
-    margin-left: 1em;
-  }
 }
 
 .post--compact {
@@ -185,7 +149,15 @@
     margin: 0;
   }
 
+  .post__meta {
+    padding: 0 0 0.5rem 0;
+
+    @include mappy-bp(medium) {
+      padding: 0 0 1rem 0;
+    }
+  }
+
   .post__date {
-    margin: 0;
+    padding: 0;
   }
 }

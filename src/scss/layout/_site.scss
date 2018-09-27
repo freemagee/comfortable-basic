@@ -70,8 +70,6 @@
     padding: 2rem 0 4rem;
   }
 
-  &__header {}
-
   &__title {
     margin: 0 0 1.3em;
     font-size: 1.414em;
@@ -97,22 +95,24 @@
   }
 }
 
-// .site-content {
-//   @include mappy-bp(small) {
-//     padding: 0 1rem;
-//   }
-
-//   @include mappy-bp(medium) {
-//     padding: 2rem 3rem;
-//   }
-// }
-
 .site-list {
+  &__list {
+    padding-top: 1rem;
+
+    @include mappy-bp(medium) {
+      padding-top: 0;
+    }
+  }
+
   &__title {
     margin: 0;
     font-size: 1.999em;
     font-family: $font__title;
     line-height: 1.2;
+
+    @include mappy-bp(medium) {
+      padding-top: 2rem;
+    }
   }
 
   &__type {
@@ -133,10 +133,6 @@
     > p:last-child {
       margin-bottom: 0;
     }
-  }
-
-  &__list {
-    padding-top: 2rem;
   }
 }
 

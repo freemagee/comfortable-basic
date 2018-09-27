@@ -27,13 +27,5 @@
     </section>
   </article>
 
-  <aside class="post__siblings">
-    <span class="post__more">More posts</span>
-    {{ with .NextInSection }}
-      <a class="post__next" href="{{ .Permalink }}">&lt; {{ .Title }}</a>
-    {{ end }}
-    {{ with .PrevInSection }}
-      <a class="post__previous" href="{{ .Permalink }}">{{ .Title }} &gt;</a>
-    {{ end }}
-  </aside>
+  {{ partial "post-siblings.html" . }}
 {{ end }}
