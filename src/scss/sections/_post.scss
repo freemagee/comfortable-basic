@@ -148,16 +148,4 @@
   .post__header {
     margin: 0;
   }
-
-  .post__meta {
-    padding: 0 0 0.5rem 0;
-
-    @include mappy-bp(medium) {
-      padding: 0 0 1rem 0;
-    }
-  }
-
-  .post__date {
-    padding: 0;
-  }
 }
