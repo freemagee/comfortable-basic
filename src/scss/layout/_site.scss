@@ -49,12 +49,26 @@
   }
 
   &__nav-item {
+    padding: 0.25rem;
     font-size: 1em;
-    transition: color 0.2s ease-in-out;
+    color: $color__darkest;
+    background:
+       linear-gradient(
+         to bottom,
+         $color__theme 0%,
+         $color__theme 100%
+       );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    text-decoration: none;
+    transition: background-size 0.2s, color 0.2s;
+
 
     &:hover,
     &:focus {
-      color: $color__dark;
+      color: #fff;
+      background-size: 4px 100%;
     }
 
     &.active {
