@@ -3,22 +3,28 @@
 // -----------------------------------------------------------------------------
 
 .site-container {
-  max-width: 50em;
+  max-width: 48em;
   margin: 0 auto;
 
   &__inner {
-    padding: 1rem;
+    padding: 0 0.5rem;
+
+    @include mappy-bp(small) {
+      padding: 0 1rem;
+    }
   }
 }
 
 .site-header {
   $self: &;
   display: flex;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   align-items: center;
   justify-content: space-between;
 
-  &__ident {}
+  @include mappy-bp(small) {
+    padding: 1rem;
+  }
 
   &__nav {
     display: flex;
@@ -58,7 +64,11 @@
 }
 
 .site-intro {
-  padding: 2rem 0 4rem;
+  padding: 0 0 2rem;
+
+  @include mappy-bp(medium) {
+    padding: 2rem 0 4rem;
+  }
 
   &__header {}
 
@@ -87,13 +97,15 @@
   }
 }
 
-.site-content {
-  padding: 2rem 1rem;
+// .site-content {
+//   @include mappy-bp(small) {
+//     padding: 0 1rem;
+//   }
 
-  @include mappy-bp(small) {
-    padding: 2rem 3rem;
-  }
-}
+//   @include mappy-bp(medium) {
+//     padding: 2rem 3rem;
+//   }
+// }
 
 .site-list {
   &__title {
@@ -129,9 +141,10 @@
 }
 
 .site-footer {
+  padding: 4rem 0 1rem;
+
   &__copyright {
     margin: 0;
-    padding-top: 4rem;
     text-align: center;
 
     > a {

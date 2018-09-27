@@ -3,9 +3,11 @@
 // ----------------------------------------------------------------------------
 
 .posts {
-  padding: 0 1rem;
-
   @include mappy-bp(small) {
+    padding: 0 1rem;
+  }
+
+  @include mappy-bp(medium) {
     padding: 0 3rem;
   }
 }

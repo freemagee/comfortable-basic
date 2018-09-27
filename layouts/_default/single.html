@@ -3,10 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-  <div class="site-content">
-    <article class="post post--single">
-      <header class="post__header">
-        <h1 class="post__title post__title--single">{{ .Title }}</h1>
+  <article class="post post--single">
+    <header class="post__header">
+      <h1 class="post__title post__title--single">{{ .Title }}</h1>
+      <div class="post__meta">
         <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
           <span class="post__published">Published:</span>
           <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
@@ -14,16 +14,18 @@
         {{ if .Params.categories }}
         <ul class="post__categories">
           {{ range $index, $category := .Params.categories }}
-          <li class="post__category"><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
+          <li class="post__category">
+            <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a>
+          </li>
           {{ end }}
         </ul>
         {{ end }}
-      </header>
-      <section class="post-content">
-        {{ .Content }}
-      </section>
-    </article>
-  </div>
+      </div>
+    </header>
+    <section class="post-content">
+      {{ .Content }}
+    </section>
+  </article>
 
   <aside class="post__siblings">
     <span class="post__more">More posts</span>
