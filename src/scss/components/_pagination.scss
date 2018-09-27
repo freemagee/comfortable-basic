@@ -23,15 +23,43 @@
     justify-content: center;
   }
 
-  &__older {
+  &__nav {
     @include basic-button();
+    flex: 0 1;
+
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-previous,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-previous {
+      fill: $color__theme;
+    }
+
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-newer,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-newer {
+      fill: $color__theme;
+    }
   }
 
-  &__newer {
-    @include basic-button();
-  }
-
-  &__newer + #{ $self }__older {
+  &__nav + #{ $self }__nav {
     margin-left: 1em;
+  }
+
+  &__nav--previous {
+    padding-left: 1rem;
+  }
+
+  &__nav--newer {
+    padding-right: 1rem;
+  }
+
+  &__nav-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
+  &__nav-icon-previous,
+  &__nav-icon-newer {
+    fill: #fff;
+    transition: fill 0.2s ease-in-out;
   }
 }
