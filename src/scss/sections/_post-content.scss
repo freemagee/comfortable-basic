@@ -1,4 +1,9 @@
 .post-content {
+  // Auto summarised content is dumped into the containing div as plain text
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+
   // Remove margins on first and last elements
   // Ref: https://css-tricks.com/snippets/css/remove-margins-first-element/
   > :first-child { margin-top: 0 !important; margin-left: 0 !important; }

@@ -15,9 +15,9 @@ body {
   color: $color__text-default;
 }
 
-p, h1, h2, h3, h4, h5, h6, li, th, td {
+// Deal with long words etc.
+p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-  hyphens: auto;
 }
