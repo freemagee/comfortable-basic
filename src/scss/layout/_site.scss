@@ -85,7 +85,7 @@
   }
 
   &__title {
-    margin: 0 0 1.3em;
+    margin: 0 0 1.3rem;
     font-size: 1.414em;
 
     @include mappy-bp(medium) {
@@ -95,7 +95,7 @@
 
   &__content {
     > p {
-      margin: 0 0 1.3em;
+      margin: 0 0 1.3rem;
       font-size: 1.414em;
 
       @include mappy-bp(medium) {
@@ -141,7 +141,7 @@
     padding-top: 1rem;
 
     > p {
-      margin: 0 0 1.3em 0;
+      margin: 0 0 1.3rem 0;
     }
 
     > p:last-child {

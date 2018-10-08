@@ -9,7 +9,7 @@
 
   &__content {
     p, ul, ol {
-      margin: 0 1em 1.3em;
+      margin: 0 1rem 1.3rem;
 
       @include mappy-bp(small) {
         margin: 0 3em 1.3em;
@@ -17,7 +17,7 @@
     }
 
     p:first-of-type {
-      margin: 0 0 1.3em;
+      margin: 0 0 1.3rem;
       font-size: 1.414em;
     }
   }

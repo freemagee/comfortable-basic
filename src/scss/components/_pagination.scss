@@ -1,6 +1,6 @@
 .pagination {
   $self: &;
-  margin: 2em 0 0;
+  margin: 2rem 0 0;
 
   &__count {
     display: block;
@@ -11,14 +11,14 @@
       display: block;
       width: 2.5em;
       height: 4px;
-      margin: 0 auto 1em;
+      margin: 0 auto 1rem;
       background-color: $color__theme;
     }
   }
 
   &__ctrl {
     display: flex;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
     align-items: center;
     justify-content: center;
   }
@@ -39,7 +39,7 @@
   }
 
   &__nav + #{ $self }__nav {
-    margin-left: 1em;
+    margin-left: 1rem;
   }
 
   &__nav--previous {
