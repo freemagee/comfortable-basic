@@ -1,11 +1,13 @@
 {{ define "main" }}
-  {{ if .Content }}
-  <article class="site-intro">
-    <header class="site-intro__header">
-      <h1 class="site-intro__title">{{- .Title -}}</h1>
-    </header>
-    <section class="site-intro__content">{{- .Content -}}</section>
-  </article>
+  {{ if eq .Paginator.PageNumber 1 }}
+    {{ if .Content }}
+    <article class="site-intro">
+      <header class="site-intro__header">
+        <h1 class="site-intro__title">{{- .Title -}}</h1>
+      </header>
+      <section class="site-intro__content">{{- .Content -}}</section>
+    </article>
+    {{ end }}
   {{ end }}
 
   <section class="posts posts--home">
