@@ -1,3 +1,4 @@
+{{ if ne .TotalPages 0}}
 <nav class="pagination">
   <div class="pagination__ctrl">
     {{ if .HasPrev }}
@@ -22,5 +23,7 @@
     </span></a>
     {{ end }}
   </div>
+
   <span class="pagination__count">Page {{ .PageNumber }} of {{ .TotalPages }}</span>
 </nav>
+{{ end }}
