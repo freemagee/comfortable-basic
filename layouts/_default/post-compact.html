@@ -1,4 +1,4 @@
-<section class="post">
+<section class="post post--compact post--section-{{ .Section }}">
   <header class="post__header">
     <a href="{{ .RelPermalink }}" class="post__title post__title--mb">
       {{ .Title }}
@@ -32,7 +32,4 @@
       {{ end }}
     </div>
   </header>
-  <div class="post-content">
-    {{ .Content }}
-  </div>
 </section>

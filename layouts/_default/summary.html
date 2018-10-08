@@ -1,4 +1,4 @@
-<section class="post post--compact post--section-{{ .Section }}">
+<section class="post post--summary">
   <header class="post__header">
     <a href="{{ .RelPermalink }}" class="post__title post__title--mb">
       {{ .Title }}
@@ -32,4 +32,13 @@
       {{ end }}
     </div>
   </header>
+  <div class="post-content">
+    {{ .Summary }}
+  </div>
+  {{ if .Truncated }}
+  <div class="post__truncated">
+  <!-- This post includes a read more link, but only if the summary is truncated... -->
+    <a href="{{ .RelPermalink }}" class="post__read-more">Read more &hellip;</a>
+  </div>
+  {{ end }}
 </section>

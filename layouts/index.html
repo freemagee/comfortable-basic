@@ -12,7 +12,7 @@
 
   <section class="posts posts--home">
     {{ range $index, $page := .Paginator.Pages }}
-      {{ .Render "li" }}
+      {{ .Render "summary" }}
     {{ end }}
   </section>
 

@@ -140,6 +140,15 @@
   & + & {
     margin-top: 2em;
   }
+
+  &__truncated {
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__read-more {}
 }
 
 .post--compact {
