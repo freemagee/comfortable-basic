@@ -1,3 +1,4 @@
+{{ if .NextInSection }}
 <aside class="post-siblings">
   <span class="post-siblings__more">More posts</span>
   {{ with .NextInSection }}
@@ -22,3 +23,4 @@
   </span></a>
   {{ end }}
 </aside>
+{{ end }}
