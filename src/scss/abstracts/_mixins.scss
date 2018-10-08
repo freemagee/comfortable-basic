@@ -4,7 +4,7 @@
 
 @mixin basic-button() {
   display: inline-block;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 0.25rem;
   margin-bottom: 0;
   background-color: $color__background-button;
   border-color: $color__border-button;
@@ -21,6 +21,10 @@
   color: $color__text-button;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  @include mappy-bp(medium) {
+    padding: 1rem 0.5rem;
+  }
 
   &:hover,
   &:focus {
