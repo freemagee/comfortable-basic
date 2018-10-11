@@ -25,6 +25,15 @@
     <section class="post-content">
       {{ .Content }}
     </section>
+    <footer class="post__footer">
+      {{ if .Params.tags }}
+      <ul class="post__tags">
+        {{ range $index, $tag := .Params.tags }}
+        <li class="post__tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" class="post__tag-link"><span class="post__tag-label">#</span>{{ $tag }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </footer>
   </article>
 
   {{ partial "post-siblings.html" . }}

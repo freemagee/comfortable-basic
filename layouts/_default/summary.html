@@ -35,10 +35,19 @@
   <div class="post-content">
     {{ .Summary }}
   </div>
-  {{ if .Truncated }}
-  <div class="post__truncated">
-  <!-- This post includes a read more link, but only if the summary is truncated... -->
-    <a href="{{ .RelPermalink }}" class="post__read-more">Read more &hellip;</a>
-  </div>
-  {{ end }}
+  <footer class="post__footer">
+    {{ if .Params.tags }}
+    <ul class="post__tags">
+      {{ range $index, $tag := .Params.tags }}
+      <li class="post__tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" class="post__tag-link"><span class="post__tag-label">#</span>{{ $tag }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ if .Truncated }}
+    <div class="post__truncated">
+    <!-- This post includes a read more link, but only if the summary is truncated... -->
+      <a href="{{ .RelPermalink }}" class="post__read-more">Read more &hellip;</a>
+    </div>
+    {{ end }}
+  </footer>
 </section>

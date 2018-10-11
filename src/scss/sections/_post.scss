@@ -23,13 +23,17 @@
   }
 
   &__header {
-    margin: 0 0 1rem 0;
-    color: $color__theme;
+    padding: 0 0 1.5rem 0;
+
+    @include mappy-bp(small) {
+      padding: 0 0 1rem 0;
+    }
   }
 
   &__title {
     display: block;
     margin: 0 0 0.5rem 0;
+    color: $color__theme;
     font-size: 1.414em;
     font-family: $font__title;
     font-weight: 700;
@@ -76,12 +80,12 @@
 
   &__date {
     display: block;
-    padding: 0 0 1rem 0;
+    padding: 0 0 0.5rem 0;
     font-size: 1em;
     color: $color__mid;
 
     @include mappy-bp(medium) {
-      padding: 0 1rem 0 0;
+      padding: 0 1.5rem 0 0;
       font-size: 0.707em;
     }
   }
@@ -100,6 +104,10 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    @include mappy-bp(medium) {
+      margin-right: 1.5rem;
+    }
   }
 
   &__category {
@@ -137,11 +145,54 @@
     }
   }
 
-  &__truncated {
+  &__footer {
     display: flex;
     padding-top: 2rem;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+  }
+
+  &__tags {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__tag {
+    flex: 0 1 auto;
+  }
+
+  &__tag + #{ $self }__tag {
+    margin-left: 0.25rem;
+  }
+
+  &__tag-link {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: $color__mid;
+    transition: color 0.2s ease-in-out;
+
+    @include mappy-bp(medium) {
+      font-size: 0.707em;
+    }
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      color: $color__theme;
+    }
+  }
+
+  &__tag-label {
+    color: $color__theme;
+  }
+
+  &__truncated {
+    margin-left: auto;
+    align-self: flex-end;
   }
 
   &__read-more {}
