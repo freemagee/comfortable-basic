@@ -1,17 +1,22 @@
 .page {
   &__title {
-    font-family: $font__title;
-    font-size: 1.999em;
-    line-height: 1.2;
-    margin: 0;
-    padding: 2rem 0 1rem;
+    margin: 0 0 1.3rem;
+    font-size: 1.414em;
+
+    @include mappy-bp(medium) {
+      font-size: 1.999em;
+    }
   }
 
   &__content {
     p, ul, ol {
-      margin: 0 1rem 1.3rem;
+      margin: 0 0 1.3rem;
 
       @include mappy-bp(small) {
+        margin: 0 1rem 1.3rem;
+      }
+
+      @include mappy-bp(medium) {
         margin: 0 3em 1.3em;
       }
     }
