@@ -20,6 +20,16 @@ a {
   color: $color__theme;
   text-decoration: none;
   line-height: 1.2;
+  transition: color 0.2s;
+
+  &:visited {
+    color: $color__mid;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color__dark;
+  }
 }
 
 sup a,

@@ -38,6 +38,7 @@
     font-family: $font__title;
     font-weight: 700;
     line-height: 1.2;
+    transition: color 0.2s;
 
     @include mappy-bp(small) {
       font-size: 1.999em;
@@ -49,6 +50,15 @@
 
     &--single {
       color: $color__dark;
+    }
+
+    &:visited {
+      color: $color__mid;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color__theme;
     }
 
     &:hover > #{ $self }__title-icon #{ $self }__title-icon-link,
@@ -65,7 +75,7 @@
 
   &__title-icon-link {
     fill: transparent;
-    transition: fill 0.2s ease-in-out;
+    transition: fill 0.2s;
   }
 
   &__meta {
@@ -127,7 +137,7 @@
     background-color: $color__mid;
     border: 2px solid $color__mid;
     border-radius: 3px;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s, color 0.2s;
 
     @include mappy-bp(medium) {
       font-size: 0.707em;
@@ -135,6 +145,11 @@
 
     &::before {
       display: none;
+    }
+
+    &:visited {
+      background-color: $color__lightest;
+      color: $color__mid;
     }
 
     &:hover,
@@ -173,10 +188,14 @@
     font-size: 1em;
     font-weight: 600;
     color: $color__mid;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s;
 
     @include mappy-bp(medium) {
       font-size: 0.707em;
+    }
+
+    &:visited {
+      color: $color__mid;
     }
 
     &:hover,
@@ -188,6 +207,10 @@
 
   &__tag-label {
     color: $color__theme;
+  }
+
+  &__tag-link:visited #{ $self }__tag-label {
+    color: $color__mid;
   }
 
   &__truncated {
