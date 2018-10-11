@@ -1,10 +1,14 @@
+{{ $navStyle := "site-header__nav-item" }}
+{{ if eq .RelPermalink "/about/" }}
+  {{ $navStyle = "site-header__nav-item active" }}
+{{ end }}
 <header class="site-header">
   <section class="site-header__ident">
     <a href="{{ .Site.BaseURL }}" class="site-header__link">{{- .Site.Title -}}</a>
   </section>
   <nav class="site-header__nav">
-    {{ with .Site.GetPage "about" }}
-    <a href="{{ .Site.BaseURL }}about/" class="site-header__nav-item {{ if eq .URL "/about/"}}active{{ end }}">About</a>
-    {{ end }}
+  {{ with .Site.GetPage "about" }}
+    <a href="{{ .Site.BaseURL }}about/" class="{{ $navStyle }}">About</a>
+  {{ end }}
   </nav>
 </header>
