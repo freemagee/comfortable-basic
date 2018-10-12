@@ -27,6 +27,16 @@
     @include basic-button();
     flex: 0 1;
 
+    &:visited {
+      color: #fff;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color__theme;
+    }
+
     &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-previous,
     &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-previous {
       fill: $color__theme;

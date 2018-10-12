@@ -53,7 +53,7 @@
     }
 
     &:visited {
-      color: $color__mid;
+      color: $color__dark;
     }
 
     &:hover,
@@ -92,7 +92,7 @@
     display: block;
     padding: 0 0 0.5rem 0;
     font-size: 1em;
-    color: $color__mid;
+    color: $color__darker;
 
     @include mappy-bp(medium) {
       padding: 0 1.5rem 0 0;
@@ -134,10 +134,12 @@
     font-size: 1em;
     font-weight: 600;
     color: #fff;
-    background-color: $color__mid;
-    border: 2px solid $color__mid;
+    background-color: $color__darker;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $color__darker;
     border-radius: 3px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 
     @include mappy-bp(medium) {
       font-size: 0.707em;
@@ -148,15 +150,17 @@
     }
 
     &:visited {
-      background-color: $color__lightest;
       color: $color__mid;
+      background-color: $color__off-white;
+      border-color: $color__mid;
     }
 
     &:hover,
     &:focus {
       outline: 0;
-      color: $color__mid;
+      color: $color__darker;
       background-color: transparent;
+      border-color: $color__darker;
     }
   }
 
@@ -218,7 +222,19 @@
     align-self: flex-end;
   }
 
-  &__read-more {}
+  &__read-more {
+    color: $color__theme;
+
+    &:visited {
+      color: $color__darker;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color__darkest;
+    }
+  }
 }
 
 .post--compact {

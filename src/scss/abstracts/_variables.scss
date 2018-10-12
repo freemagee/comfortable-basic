@@ -23,7 +23,7 @@ $color__cinnabar: hsl(0, 86.2%, 57.3%) !default;
 // Component colors
 $color__theme: $color__cinnabar !default;
 
-$color__text-default: $color__dark !default;
+$color__text-default: $color__darkest !default;
 $color__text-button: #fff !default;
 $color__text-button-hover: $color__theme !default;
 $color__text-button-active: $color__dark !default;
