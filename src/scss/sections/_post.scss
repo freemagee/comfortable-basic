@@ -175,6 +175,7 @@
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
     list-style: none;
   }
 
@@ -192,6 +193,7 @@
     font-size: 1em;
     font-weight: 600;
     color: $color__mid;
+    word-break: normal;
     transition: color 0.2s;
 
     @include mappy-bp(medium) {
@@ -219,11 +221,13 @@
 
   &__truncated {
     margin-left: auto;
+    flex: 0 1 auto;
     align-self: flex-end;
   }
 
   &__read-more {
     color: $color__theme;
+    white-space: nowrap;
 
     &:visited {
       color: $color__darker;
