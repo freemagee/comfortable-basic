@@ -167,16 +167,19 @@
   &__footer {
     display: flex;
     padding-top: 2rem;
-    align-items: center;
-    justify-content: flex-start;
   }
 
   &__tags {
     display: flex;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
+    flex: 0 1;
+    flex-direction: column;
     list-style: none;
+
+    @include mappy-bp(medium) {
+      flex-direction: row;
+    }
   }
 
   &__tag {
@@ -226,8 +229,9 @@
   }
 
   &__read-more {
+    display: flex;
     color: $color__theme;
-    white-space: nowrap;
+    align-items: center;
 
     &:visited {
       color: $color__darker;
@@ -239,6 +243,18 @@
       color: $color__darkest;
     }
   }
+
+  &__read-more-label {
+    flex: 1 0 auto;
+  }
+
+  &__read-more-icon {
+    flex: 1 0 20px;
+    width: 20px;
+    height: 20px;
+    fill: $color__theme;
+    transition: fill 0.2s;
+  }
 }
 
 .post--compact {
@@ -247,4 +263,8 @@
   .post__header {
     margin: 0;
   }
+}
+
+.post--summary + .post--summary {
+  border-bottom: 1px solid $color__theme;
 }
