@@ -10,7 +10,7 @@
   > :last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
 
   p {
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3rem;
   }
 
   h1, h2, h3, h4 {
@@ -60,7 +60,7 @@
 
   ul,
   ol {
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3rem;
     padding: 0 0 0 1.3rem;
 
     li {
@@ -90,7 +90,7 @@
   }
 
   blockquote {
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3rem;
     padding: 1rem;
     background-color: rgba($color__theme, 0.1);
     border-radius: $setting__default-border-radius;
@@ -101,28 +101,25 @@
     }
   }
 
-  code {
-    padding: 0.05rem 0.2rem;
-    border-radius: 3px;
-    background-color: rgba($color__theme, 0.1);
-  }
-
-  pre {
-    margin: 0 0 1.3rem 0;
+  pre:not(.chroma) {
+    margin: 0 0 1.3rem;
     padding: 0.5rem;
     border-radius: 3px;
     background-color: rgba($color__theme, 0.1);
     overflow: auto;
+  }
 
-    > code {
-      padding: 0;
-      border-radius: 0;
-      background-color: transparent;
-    }
+  code {
+    font-size: 1em;
+    line-height: 1.2;
+  }
+
+  .highlight {
+    margin: 0 0 1.3rem;
   }
 
   dl {
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3rem;
 
     > dt {
       font-weight: bold;
