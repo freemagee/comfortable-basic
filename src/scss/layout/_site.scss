@@ -40,6 +40,7 @@
     font-weight: 700;
     line-height: 1.2;
     color: $color__theme;
+    text-decoration: none;
     transition: color 0.2s;
 
     &:visited {
@@ -114,6 +115,10 @@
     > p:last-child {
       margin-bottom: 0;
     }
+
+    > p a {
+      @include basic-link;
+    }
   }
 }
 
@@ -161,16 +166,19 @@
 .site-footer {
   padding: 4rem 0 1rem;
 
+  a {
+    @include basic-link;
+  }
+
   &__copyright {
     margin: 0;
     text-align: center;
   }
 
   &__hugo-logo {
-    vertical-align: middle;
-  }
-
-  a > img {
     display: inline-block;
+    vertical-align: middle;
+    border: 0!important;// Shame
+    box-shadow: unset!important;// Shame
   }
 }

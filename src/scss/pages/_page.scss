@@ -25,5 +25,9 @@
       margin: 0 0 1.3rem;
       font-size: 1.414em;
     }
+
+    a {
+      @include basic-link;
+    }
   }
 }

@@ -38,6 +38,7 @@
     font-family: $font__title;
     font-weight: 700;
     line-height: 1.2;
+    text-decoration: none;
     transition: color 0.2s;
 
     @include mappy-bp(small) {
@@ -58,24 +59,15 @@
 
     &:hover,
     &:focus {
+      outline: 0;
       color: $color__theme;
     }
+  }
 
-    &:hover > #{ $self }__title-icon #{ $self }__title-icon-link,
-    &:focus > #{ $self }__title-icon #{ $self }__title-icon-link {
-      fill: $color__theme;
+  h1#{ $self }__title {
+    &:hover {
+      color: $color__dark;
     }
-  }
-
-  &__title-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-  }
-
-  &__title-icon-link {
-    fill: transparent;
-    transition: fill 0.2s;
   }
 
   &__meta {
@@ -129,11 +121,13 @@
   }
 
   &__category-link {
+    display: inline-block;
     margin: 0;
     padding: 0.25rem 0.5rem;
     font-size: 1em;
     font-weight: 600;
     color: #fff;
+    text-decoration: none;
     background-color: $color__darker;
     border-width: 2px;
     border-style: solid;
@@ -197,6 +191,7 @@
     font-weight: 600;
     color: $color__mid;
     word-break: normal;
+    text-decoration: none;
     transition: color 0.2s;
 
     @include mappy-bp(medium) {
@@ -232,9 +227,10 @@
     display: flex;
     color: $color__theme;
     align-items: center;
+    text-decoration: none;
 
     &:visited {
-      color: $color__darker;
+      color: $color__light;
     }
 
     &:hover,
@@ -254,6 +250,10 @@
     height: 20px;
     fill: $color__theme;
     transition: fill 0.2s;
+  }
+
+  &__read-more:visited &__read-more-icon {
+    fill: $color__light;
   }
 }
 

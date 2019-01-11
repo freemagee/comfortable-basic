@@ -21,7 +21,8 @@ $color__zest: hsl(28.2, 79.7%, 51.8%) !default;
 $color__cinnabar: hsl(0, 86.2%, 57.3%) !default;
 
 // Component colors
-$color__theme: $color__cinnabar !default;
+$color__theme: $color__royal-blue !default;
+$color__theme-lighter: lighten($color__theme, 33%);
 
 $color__text-default: $color__darkest !default;
 $color__text-button: #fff !default;
