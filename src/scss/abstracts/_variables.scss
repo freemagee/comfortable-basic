@@ -16,25 +16,34 @@ $color__darker: #3D3D3D !default;
 $color__darkest: #1f1f1f !default;
 
 // Named colors
-$color__royal-blue: hsl(213.6, 65.2%, 54.9%) !default;
-$color__zest: hsl(28.2, 79.7%, 51.8%) !default;
-$color__cinnabar: hsl(0, 86.2%, 57.3%) !default;
+$color__blue: 214 !default;
+$color__green: 110 !default;
+$color__red: 10 !default;
+$color__orange: 25 !default;
 
-// Component colors
-$color__theme: $color__royal-blue !default;
-$color__theme-lighter: lighten($color__theme, 33%);
+// Theme colors
+$color__hue: $color__blue !default;
+$color__hue-accent: $color__orange !default;
 
+$color__theme: hsl($color__hue, 65%, 55%) !default;
+$color__theme-lighter: hsl($color__hue, 55%, 85%) !default;
+$color__theme-duller: hsl($color__hue, 25%, 95%) !default;
+$color__theme-highlight: hsl($color__hue-accent, 80%, 65%) !default;
+
+// Text colors
 $color__text-default: $color__darkest !default;
 $color__text-button: #fff !default;
 $color__text-button-hover: $color__theme !default;
 $color__text-button-active: $color__dark !default;
 $color__text-button-disabled: $color__mid !default;
 
+// Background colors
 $color__background-button: $color__theme !default;
 $color__background-button-hover: transparent !default;
 $color__background-button-active: transparent !default;
 $color__background-button-disabled: $color__light !default;
 
+// Border colors
 $color__border-button: $color__theme !default;
 $color__border-button-hover: $color__theme !default;
 $color__border-button-active: $color__dark !default;

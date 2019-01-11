@@ -105,7 +105,7 @@
   blockquote {
     margin: 0 0 1.3rem;
     padding: 1rem;
-    background-color: $color__theme-lighter;
+    background-color: $color__theme-duller;
     border-radius: $setting__default-border-radius;
     border-left: $setting__default-border-width solid $color__theme;
 
@@ -118,7 +118,7 @@
     margin: 0 0 1.3rem;
     padding: 0.5rem;
     border-radius: 3px;
-    background-color: $color__theme-lighter;
+    background-color: $color__theme-duller;
     overflow: auto;
   }
 
