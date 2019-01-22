@@ -1,19 +1,19 @@
-// -----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 
 // Colors
 
 // Shades of black
-$color__off-white: #f5f5f5 !default;
-$color__lightest: #D6D6D6 !default;
-$color__lighter: #B7B7B7 !default;
-$color__light: #999 !default;
-$color__mid: #7A7A7A !default;
-$color__dark: #5B5B5B !default;
-$color__darker: #3D3D3D !default;
-$color__darkest: #1f1f1f !default;
+$color__grey-100: #f5f5f5 !default;
+$color__grey-200: #D6D6D6 !default;
+$color__grey-300: #B7B7B7 !default;
+$color__grey-400: #999 !default;
+$color__grey-500: #7A7A7A !default;
+$color__grey-600: #5B5B5B !default;
+$color__grey-700: #3D3D3D !default;
+$color__grey-800: #1f1f1f !default;
 
 // Named colors
 $color__blue: 214 !default;
@@ -23,31 +23,36 @@ $color__orange: 25 !default;
 
 // Theme colors
 $color__hue: $color__blue !default;
-$color__hue-accent: $color__orange !default;
+// $color__hue-accent: $color__orange !default;
 
-$color__theme: hsl($color__hue, 65%, 55%) !default;
-$color__theme-lighter: hsl($color__hue, 55%, 85%) !default;
-$color__theme-duller: hsl($color__hue, 25%, 95%) !default;
-$color__theme-highlight: hsl($color__hue-accent, 80%, 65%) !default;
+$color__primary-100: hsl($color__hue, 33%, 9%) !default;
+$color__primary-200: hsl($color__hue, 49%, 19%) !default;
+$color__primary-300: hsl($color__hue, 54%, 29%) !default;
+$color__primary-400: hsl($color__hue, 56%, 40%) !default;
+$color__primary-500: hsl($color__hue, 60%, 51%) !default;// This is the primary
+$color__primary-600: hsl($color__hue, 61%, 61%) !default;
+$color__primary-700: hsl($color__hue, 61%, 72%) !default;
+$color__primary-800: hsl($color__hue, 63%, 83%) !default;
+$color__primary-900: hsl($color__hue, 62%, 94%) !default;
 
 // Text colors
-$color__text-default: $color__darkest !default;
+$color__text-default: $color__grey-800 !default;
 $color__text-button: #fff !default;
-$color__text-button-hover: $color__theme !default;
-$color__text-button-active: $color__dark !default;
-$color__text-button-disabled: $color__mid !default;
+$color__text-button-hover: $color__primary-500 !default;
+$color__text-button-active: $color__grey-600 !default;
+$color__text-button-disabled: $color__grey-500 !default;
 
 // Background colors
-$color__background-button: $color__theme !default;
+$color__background-button: $color__primary-500 !default;
 $color__background-button-hover: transparent !default;
 $color__background-button-active: transparent !default;
-$color__background-button-disabled: $color__light !default;
+$color__background-button-disabled: $color__grey-400 !default;
 
 // Border colors
-$color__border-button: $color__theme !default;
-$color__border-button-hover: $color__theme !default;
-$color__border-button-active: $color__dark !default;
-$color__border-button-disabled: $color__light !default;
+$color__border-button: $color__primary-500 !default;
+$color__border-button-hover: $color__primary-500 !default;
+$color__border-button-active: $color__grey-600 !default;
+$color__border-button-disabled: $color__grey-400 !default;
 
 // Fonts
 $font__base-line-height: 1.45 !default;

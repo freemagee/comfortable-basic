@@ -39,29 +39,29 @@
     font-size: 1em;
     font-weight: 700;
     line-height: 1.2;
-    color: $color__theme;
+    color: $color__primary-500;
     text-decoration: none;
     transition: color 0.2s;
 
     &:visited {
-      color: $color__theme;
+      color: $color__primary-500;
     }
 
     &:hover,
     &:focus {
-      color: $color__dark;
+      color: $color__grey-600;
     }
   }
 
   &__nav-item {
     padding: 0.25rem;
     font-size: 1em;
-    color: $color__darkest;
+    color: $color__grey-800;
     background:
        linear-gradient(
          to bottom,
-         $color__theme 0%,
-         $color__theme 100%
+         $color__primary-500 0%,
+         $color__primary-500 100%
        );
     background-position: 0 100%;
     background-repeat: repeat-x;
@@ -70,7 +70,7 @@
     transition: background-size 0.2s ease-in-out, color 0.2s;
 
     &:visited {
-      color: $color__darkest;
+      color: $color__grey-800;
     }
 
     &:hover,
@@ -143,11 +143,11 @@
   }
 
   &__type {
-    color: $color__dark;
+    color: $color__grey-600;
   }
 
   &__name {
-    color: $color__mid;
+    color: $color__grey-500;
   }
 
   &__intro {

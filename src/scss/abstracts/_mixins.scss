@@ -63,21 +63,21 @@
   background-color: transparent;
   color: inherit;
   text-decoration: none;
-  border-bottom: 0.15em solid $color__theme-lighter;
-  box-shadow: inset 0 -0.3em 0 $color__theme-lighter;
+  border-bottom: 0.15em solid $color__primary-800;
+  box-shadow: inset 0 -0.3em 0 $color__primary-800;
   overflow-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
   transition: background .2s cubic-bezier(0.33, 0.66, 0.66, 1);
 
   &:visited {
-    color: $color__light;
+    color: $color__grey-400;
   }
 
   &:hover,
   &:active,
   &:focus {
-    background-color: $color__theme-lighter;
-    color: $color__darkest;
+    background-color: $color__primary-800;
+    color: $color__grey-800;
   }
 }

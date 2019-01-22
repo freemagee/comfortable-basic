@@ -17,7 +17,7 @@
       width: 2.5em;
       height: 4px;
       margin: 0 auto 1rem;
-      background-color: $color__theme;
+      background-color: $color__primary-500;
     }
   }
 
@@ -27,12 +27,12 @@
 
     &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-previous,
     &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-previous {
-      fill: $color__theme;
+      fill: $color__primary-500;
     }
 
     &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-next,
     &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-next {
-      fill: $color__theme;
+      fill: $color__primary-500;
     }
   }
 

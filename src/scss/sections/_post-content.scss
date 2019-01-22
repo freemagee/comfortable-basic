@@ -17,7 +17,7 @@
     margin: 1.414em 0 0.5em;
     font-family: $font__title;
     line-height: 1.2;
-    color: $color__dark;
+    color: $color__grey-600;
   }
 
   h1 {
@@ -49,13 +49,13 @@
   h5 {
     font-size: 0.707em;
     font-weight: 600;
-    color: $color__dark;
+    color: $color__grey-600;
   }
 
   h6 {
     font-size: 0.707em;
     font-weight: 600;
-    color: $color__mid;
+    color: $color__grey-500;
   }
 
   a {
@@ -94,7 +94,7 @@
   }
 
   del {
-    color: $color__mid;
+    color: $color__grey-500;
   }
 
   sub,
@@ -105,9 +105,9 @@
   blockquote {
     margin: 0 0 1.3rem;
     padding: 1rem;
-    background-color: $color__theme-duller;
+    background-color: $color__primary-900;
     border-radius: $setting__default-border-radius;
-    border-left: $setting__default-border-width solid $color__theme;
+    border-left: $setting__default-border-width solid $color__primary-500;
 
     p:last-child {
       margin-bottom: 0;
@@ -118,7 +118,7 @@
     margin: 0 0 1.3rem;
     padding: 0.5rem;
     border-radius: 3px;
-    background-color: $color__theme-duller;
+    background-color: $color__primary-900;
     overflow: auto;
   }
 
@@ -153,10 +153,10 @@
   }
 
   th {
-    border-bottom: 4px solid $color__theme;
+    border-bottom: 4px solid $color__primary-500;
   }
 
   tr:nth-child(even) td {
-    background-color: $color__theme-lighter;
+    background-color: $color__primary-200;
   }
 }

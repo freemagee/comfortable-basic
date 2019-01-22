@@ -3,8 +3,8 @@
 // -----------------------------------------------------------------------------
 
 body {
-  border-top: $setting__default-border-width solid $color__theme;
-  background: $color__off-white;
+  border-top: $setting__default-border-width solid $color__primary-500;
+  background: $color__grey-100;
 }
 
 img {
@@ -23,5 +23,5 @@ hr {
   height: 4px;
   margin: 0 0 1rem 0;
   border: 0;
-  background-color: $color__theme;
+  background-color: $color__primary-500;
 }
