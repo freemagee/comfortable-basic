@@ -1,8 +1,8 @@
-<section class="post post--compact post--section-{{ .Section }}">
+<article class="post post--compact post--section-{{ .Section }}" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post__header">
-    <a href="{{ .RelPermalink }}" class="post__title">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="post__title" itemprop="title">{{ .Title }}</a>
     <div class="post__meta">
-      <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      <time class="post__date" datetime="{{ .Date.Format "2006-01-02" | safeHTML }}" itemprop="dateCreated pubdate datePublished">
         <span class="post__published">Published:</span>
         <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
       </time>
@@ -15,4 +15,4 @@
       {{ end }}
     </div>
   </header>
-</section>
+</article>

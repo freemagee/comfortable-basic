@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <article class="site-list">
+  <div class="site-list">
     <header>
       <h1 class="site-list__title">
       {{ if ne (.Type) ("posts") }}
@@ -15,13 +15,13 @@
     </header>
     {{ if .Content }}
     <!-- Show intro content if a _index.md is present for the type -->
-    <section class="site-list__intro">{{ .Content }}</section>
+    <div class="site-list__intro">{{ .Content }}</div>
     {{ end }}
 
-    <section class="site-list__list">
+    <div class="site-list__list">
     {{ range .Pages }}
         {{ .Render "post-compact" }}
     {{ end }}
-    </section>
-  </article>
+    </div>
+  </div>
 {{ end }}

@@ -1,20 +1,20 @@
 {{ define "main" }}
   {{ if eq .Paginator.PageNumber 1 }}
     {{ if .Content }}
-    <article class="site-intro">
+    <div class="site-intro">
       <header class="site-intro__header">
         <h1 class="site-intro__title">{{- .Title -}}</h1>
       </header>
-      <section class="site-intro__content">{{- .Content -}}</section>
-    </article>
+      <div class="site-intro__content">{{- .Content -}}</div>
+    </div>
     {{ end }}
   {{ end }}
 
-  <section class="posts posts--home">
+  <div class="posts posts--home">
     {{ range $index, $page := .Paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}
-  </section>
+  </div>
 
   {{ partial "pagination.html" .Paginator }}
 {{ end }}
