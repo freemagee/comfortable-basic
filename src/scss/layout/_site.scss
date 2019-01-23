@@ -7,24 +7,16 @@
   margin: 0 auto;
 
   &__inner {
-    padding: 0 0.5rem;
-
-    @include mappy-bp(small) {
-      padding: 0 1rem;
-    }
+    padding: 0 1rem;
   }
 }
 
 .site-header {
   $self: &;
   display: flex;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   align-items: center;
   justify-content: space-between;
-
-  @include mappy-bp(small) {
-    padding: 1rem;
-  }
 
   &__nav {
     display: flex;
@@ -90,6 +82,10 @@
   padding: 0 0 2rem;
 
   @include mappy-bp(medium) {
+    padding: 1rem 0 2rem;
+  }
+
+  @include mappy-bp(large) {
     padding: 2rem 0 4rem;
   }
 
@@ -105,9 +101,13 @@
   &__content {
     > p {
       margin: 0 0 1.3rem;
-      font-size: 1.414em;
+      font-size: 1em;
 
       @include mappy-bp(medium) {
+        font-size: 1.414em;
+      }
+
+      @include mappy-bp(large) {
         font-size: 1.999em;
       }
     }

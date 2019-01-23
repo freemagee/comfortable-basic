@@ -16,16 +16,10 @@ $color__grey-700: #494949 !default;
 $color__grey-800: #2f2f2f !default;
 $color__grey-900: #171717 !default;
 
-// Named colors
-$color__blue: 214 !default;
-$color__green: 110 !default;
-$color__red: 10 !default;
-$color__orange: 25 !default;
-
 // Theme colors
-$color__hue: $color__blue !default;
-// $color__hue-accent: $color__orange !default;
+$color__hue: 214 !default; // blue
 
+// Primary shades
 $color__primary-100: hsl($color__hue, 62%, 94%) !default;
 $color__primary-200: hsl($color__hue, 63%, 83%) !default;
 $color__primary-300: hsl($color__hue, 61%, 72%) !default;

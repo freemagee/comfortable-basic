@@ -4,7 +4,11 @@
 
 body {
   border-top: $setting__default-border-width solid $color__primary-500;
-  background: $color__grey-100;
+  background: #fff;
+
+  @include mappy-bp(small) {
+    background: $color__grey-100;
+  }
 }
 
 img {

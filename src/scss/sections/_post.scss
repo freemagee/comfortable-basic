@@ -1,14 +1,14 @@
 .post {
   $self: &;
-  padding: 1rem 0;
-  border-top: 1px solid $color__primary-500;
+  padding: 1.5rem 0;
+  border-top: $setting__default-border-width solid $color__primary-500;
 
   @include mappy-bp(small) {
     margin: 1rem 1rem 0;
     padding: 2rem;
     background: #fff;
     border-radius: $setting__default-border-radius;
-    border-top: $setting__default-border-width solid $color__primary-500;
+    //border-top: $setting__default-border-width solid $color__primary-500;
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 2px rgba(0, 0, 0, 0.1);
   }
 
@@ -74,7 +74,7 @@
     display: flex;
     flex-direction: column;
 
-    @include mappy-bp(medium) {
+    @include mappy-bp(small) {
       flex-direction: row;
       align-items: center;
     }
@@ -82,9 +82,13 @@
 
   &__date {
     display: block;
-    padding: 0 0 0.5rem 0;
+    padding: 0;
     font-size: 1em;
     color: $color__grey-700;
+
+    @include mappy-bp(small) {
+      padding: 0 0.5rem 0 0;
+    }
 
     @include mappy-bp(medium) {
       padding: 0 1.5rem 0 0;
@@ -105,6 +109,7 @@
     display: flex;
     padding: 0;
     margin: 0;
+    align-items: center;
     list-style: none;
 
     @include mappy-bp(medium) {
@@ -121,41 +126,8 @@
   }
 
   &__category-link {
-    display: inline-block;
-    margin: 0;
-    padding: 0.25rem 0.5rem;
-    font-size: 1em;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    background-color: $color__primary-500;
-    border-width: 2px;
-    border-style: solid;
-    border-color: $color__primary-500;
-    border-radius: 3px;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-
-    @include mappy-bp(medium) {
-      font-size: 0.707em;
-    }
-
-    &::before {
-      display: none;
-    }
-
-    &:visited {
-      color: $color__grey-500;
-      background-color: $color__grey-100;
-      border-color: $color__grey-100;
-    }
-
-    &:hover,
-    &:focus {
-      outline: 0;
-      color: $color__grey-700;
-      background-color: transparent;
-      border-color: $color__primary-500;
-    }
+    @include basic-button--small;
+    display: flex;
   }
 
   &__footer {
@@ -181,7 +153,9 @@
   }
 
   &__tag + #{ $self }__tag {
-    margin-left: 0.25rem;
+    @include mappy-bp(medium) {
+      margin-left: 0.5rem;
+    }
   }
 
   &__tag-link {
@@ -193,10 +167,6 @@
     word-break: normal;
     text-decoration: none;
     transition: color 0.2s;
-
-    @include mappy-bp(medium) {
-      font-size: 0.707em;
-    }
 
     &:visited {
       color: $color__grey-500;
@@ -228,6 +198,7 @@
     color: $color__primary-500;
     align-items: center;
     text-decoration: none;
+    transition: color 0.2s;
 
     &:visited {
       color: $color__grey-400;
