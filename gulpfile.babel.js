@@ -5,7 +5,7 @@ import sass from "gulp-sass";
 import sourcemaps from "gulp-sourcemaps";
 // POST CSS
 import postcss from "gulp-postcss";
-import cssnext from "postcss-cssnext";
+import postcssPresetEnv from "postcss-preset-env";
 import cssnano from "cssnano";
 // Define other utilities
 import notify from "gulp-notify";
@@ -80,7 +80,7 @@ function styles() {
   const nanoOptions = {
     zindex: false
   };
-  const processors = [cssnext(), cssnano(nanoOptions)];
+  const processors = [postcssPresetEnv(), cssnano(nanoOptions)];
 
   // Taking the path from the paths object
   return (
