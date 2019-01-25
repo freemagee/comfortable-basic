@@ -85,6 +85,9 @@ function styles() {
         "400 italic": ["woff", "woff2"],
         "600": ["woff", "woff2"],
         "700": ["woff", "woff2"]
+      },
+      "Ubuntu Mono": {
+        "400": ["woff", "woff2"]
       }
     },
     foundries: "google",

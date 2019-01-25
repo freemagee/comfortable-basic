@@ -139,12 +139,9 @@
   }
 
   code {
-    font-size: 0.9em;
+    font-family: $font__code;
+    font-size: 1em;
     line-height: 1.2;
-
-    @include mappy-bp(small) {
-      font-size: 1em;
-    }
   }
 
   .highlight {
