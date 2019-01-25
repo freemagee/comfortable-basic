@@ -21,15 +21,23 @@
   }
 
   h1 {
-    font-size: 2.827em;
+    font-size: 1.999em;
     font-weight: 700;
     color: $color__primary-800;
+
+    @include mappy-bp(small) {
+      font-size: 2.827em;
+    }
   }
 
   h2 {
-    font-size: 1.999em;
+    font-size: 1.414em;
     font-weight: 700;
     color: $color__primary-700;
+
+    @include mappy-bp(small) {
+      font-size: 1.999em;
+    }
   }
 
   h3 {
@@ -131,8 +139,12 @@
   }
 
   code {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 1.2;
+
+    @include mappy-bp(small) {
+      font-size: 1em;
+    }
   }
 
   .highlight {

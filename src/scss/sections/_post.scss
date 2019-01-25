@@ -8,7 +8,6 @@
     padding: 2rem;
     background: #fff;
     border-radius: $setting__default-border-radius;
-    //border-top: $setting__default-border-width solid $color__primary-500;
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 2px rgba(0, 0, 0, 0.1);
   }
 
@@ -133,6 +132,10 @@
   &__footer {
     display: flex;
     padding-top: 2rem;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__tags {
@@ -235,4 +238,9 @@
     margin: 0;
     padding: 0;
   }
+}
+
+.post--single {
+  border-top: 0;
+  padding-bottom: 0;
 }
