@@ -5,6 +5,7 @@ import sass from "gulp-sass";
 import sourcemaps from "gulp-sourcemaps";
 // POST CSS
 import postcss from "gulp-postcss";
+import fontMagician from "postcss-font-magician";
 import postcssPresetEnv from "postcss-preset-env";
 import cssnano from "cssnano";
 // Define other utilities
@@ -77,10 +78,23 @@ const changeEvent = (path, type) => {
 // SASS
 // =============================================================================
 function styles() {
-  const nanoOptions = {
-    zindex: false
+  const fontMagicianConfig = {
+    variants: {
+      Montserrat: {
+        "400": ["woff", "woff2"],
+        "400 italic": ["woff", "woff2"],
+        "600": ["woff", "woff2"],
+        "700": ["woff", "woff2"]
+      }
+    },
+    foundries: "google",
+    protocol: "https:"
   };
-  const processors = [postcssPresetEnv(), cssnano(nanoOptions)];
+  const processors = [
+    fontMagician(fontMagicianConfig),
+    postcssPresetEnv(),
+    cssnano()
+  ];
 
   // Taking the path from the paths object
   return (
