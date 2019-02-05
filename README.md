@@ -6,7 +6,7 @@ Comfortable Basic is a modern, simple Hugo theme. Intended for a blog like site.
 
 - Mobile friendly
 - Emphasis on readability
-- Lightweight
+- Lightweight(ish) see [notes](#notes)
 
 ## Installation
 
@@ -28,6 +28,7 @@ title= "Example Site"
 paginate = 3
 theme = "comfortable-basic"
 pluralizeListTitles = false
+pygmentsUseClasses = true
 
 [params]
   description = "This is a website!"
@@ -44,9 +45,10 @@ pluralizeListTitles = false
 ### TODO
 
 - Optional logo support
-- Update Gulp tasks
-- Improve "Page" styling
 - Use config description on homepage / or use _index.md title
-- Make pagination more visible, to aid user navigation
-- Mobile styling needs work: typography and spacing
+- Make pagination more visible, to aid user navigation. Add numbers?
 - Host dummy site on gh-pages branch
+
+## Notes
+
+Recently added some better code syntax highlighting. Hugo has really good built-in highlighting using [Chroma](https://gohugo.io/content-management/syntax-highlighting/). But I ran into some formatting issues with some code and extra white space being added. So I added [Highlightjs](https://highlightjs.org/) as an alternative. This unfortunately has bumped the theme file size up with the extra Javascript, and some additional fonts. So that is why Comfortable Basic is lightweight(ish) at around > 300kb. I will investigate some performance optimisations to minimise file size.

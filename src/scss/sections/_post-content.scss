@@ -129,24 +129,6 @@
     }
   }
 
-  pre:not(.chroma) {
-    margin: 0 0 1.3rem;
-    padding: 0.5rem;
-    color: $color__primary-900;
-    border-radius: 3px;
-    background-color: $color__primary-200;
-    overflow: auto;
-  }
-
-  code {
-    font-family: $font__code;
-  }
-
-  pre code {
-    font-size: 1em;
-    line-height: 1.2;
-  }
-
   p code,
   li code {
     padding: 1px 3px;
@@ -185,5 +167,30 @@
 
   tr:nth-child(even) td {
     background-color: $color__primary-200;
+  }
+}
+
+.no-js .post-content {
+  pre:not(.chroma) {
+    padding: 0.5rem;
+    color: $color__primary-900;
+    background-color: $color__primary-200;
+  }
+}
+
+.post-content {
+  pre {
+    margin: 0 0 1.3rem;
+    border-radius: 3px;
+    overflow: auto;
+  }
+
+  code {
+    font-family: $font__code;
+  }
+
+  pre code {
+    font-size: 1em;
+    line-height: 1.2;
   }
 }

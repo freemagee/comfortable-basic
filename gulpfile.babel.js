@@ -87,7 +87,9 @@ function styles() {
         "700": ["woff", "woff2"]
       },
       "Ubuntu Mono": {
-        "400": ["woff", "woff2"]
+        "400": ["woff", "woff2"],
+        "400 italic": ["woff", "woff2"],
+        "700": ["woff", "woff2"]
       }
     },
     foundries: "google",

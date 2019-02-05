@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode }}">
+<html class="no-js" lang="{{ .Site.LanguageCode }}">
 
 <head>
   <meta charset="utf-8">
@@ -30,5 +30,7 @@
       </footer>
     </div>
   </div>
+
+  {{ partial "scripts.html" . }}
 </body>
 </html>

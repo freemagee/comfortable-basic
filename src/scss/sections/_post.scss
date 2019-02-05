@@ -243,4 +243,8 @@
 .post--single {
   border-top: 0;
   padding-bottom: 0;
+
+  @include mappy-bp(medium) {
+    padding-bottom: 1.5rem;
+  }
 }

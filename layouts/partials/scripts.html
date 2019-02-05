@@ -1,0 +1,9 @@
+<script src="{{ .Site.BaseURL }}js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", event => {
+    document.documentElement.classList.remove("no-js");
+    document.querySelectorAll("pre:not(.chroma) code").forEach(block => {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
