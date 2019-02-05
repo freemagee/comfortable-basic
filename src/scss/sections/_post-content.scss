@@ -168,6 +168,33 @@
   tr:nth-child(even) td {
     background-color: $color__primary-200;
   }
+
+  img {
+    border: 1px solid $color__grey-200;
+    border-radius: 3px;
+    padding: 0.5rem;
+  }
+
+  img + img {
+    margin-top: 1.5rem;
+  }
+
+  figure {
+    margin: 0 0 1.5rem 0;
+
+    figcaption {
+      padding: 0.5rem 1rem 0;
+      font-size: 0.875em;
+    }
+
+    figcaption h4 {
+      margin: 0;
+      color: $color__primary-700;
+      font-weight: 400;
+      text-align: center;
+      font-style: italic;
+    }
+  }
 }
 
 .no-js .post-content {
