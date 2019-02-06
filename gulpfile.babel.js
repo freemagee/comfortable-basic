@@ -14,6 +14,8 @@ import plumber from "gulp-plumber";
 import colors from "ansi-colors";
 import beeper from "beeper";
 import browserSync from "browser-sync";
+import del from "del";
+import hash from "gulp-hash";
 
 // Browsersync init
 browserSync.create();
@@ -26,7 +28,8 @@ const paths = {
   styles: {
     src: `${basePaths.src}scss`,
     files: `${basePaths.src}scss/**/*.scss`,
-    dest: `${basePaths.dest}css`
+    dest: `${basePaths.dest}css`,
+    data: `${basePaths.dest}data`
   }
 };
 // Error handler
@@ -101,6 +104,9 @@ function styles() {
     cssnano()
   ];
 
+  // Delete our old css files
+  del([`${basePaths.dest}css/**/*`]);
+
   // Taking the path from the paths object
   return (
     gulp
@@ -116,9 +122,16 @@ function styles() {
       .pipe(sass())
       // Process with PostCSS - autoprefix & minify
       .pipe(postcss(processors))
+      // Hashing for cache busting, hash before generating source map
+      .pipe(hash())
+      // Write out the source map to the same dir
       .pipe(sourcemaps.write("."))
       // Finally output a css file
       .pipe(gulp.dest(paths.styles.dest))
+      // Create a hash map
+      .pipe(hash.manifest("hash.json"))
+      // Put the map in the data directory
+      .pipe(gulp.dest("./data/css"))
       // Inject into browser
       .pipe(
         browserSync.stream({

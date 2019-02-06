@@ -12,7 +12,8 @@
 
   <link href="{{ .Site.BaseURL }}images/favicon/favicon-16x16.png" rel="shortcut icon" type="image/png">
 
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "style.css" }}" />
+
 </head>
 <body>
   {{ partial "site-header.html" . }}
