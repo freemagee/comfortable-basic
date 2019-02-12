@@ -31,6 +31,12 @@
   'sections/post-content',
   'sections/post-siblings';
 
-// 7. Sections
+// 7. Pages
 @import
   'pages/page';
+
+// 8. Taxonomy
+@import
+  'taxonomy/default',
+  'taxonomy/list',
+  'taxonomy/terms';

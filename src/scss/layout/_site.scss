@@ -122,49 +122,12 @@
   }
 }
 
-.site-list {
-  &__list {
-    padding-top: 1rem;
-
-    @include mappy-bp(medium) {
-      padding-top: 0;
-    }
-  }
-
-  &__title {
-    margin: 0;
-    font-size: 1.999em;
-    font-family: $font__title;
-    line-height: 1.2;
-
-    @include mappy-bp(medium) {
-      padding-top: 2rem;
-    }
-  }
-
-  &__type {
-    color: $color__grey-600;
-  }
-
-  &__name {
-    color: $color__grey-500;
-  }
-
-  &__intro {
-    padding-top: 1rem;
-
-    > p {
-      margin: 0 0 1.3rem 0;
-    }
-
-    > p:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .site-footer {
-  padding: 4rem 0 1rem;
+  padding: 2rem 0 1rem;
+
+  @include mappy-bp(medium) {
+    padding: 4rem 0 1rem;
+  }
 
   a {
     @include basic-link;

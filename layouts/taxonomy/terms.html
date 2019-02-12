@@ -18,10 +18,17 @@
     <div class="site-list__intro">{{ .Content }}</div>
     {{ end }}
 
-    <div class="site-list__list">
-    {{ range .Pages }}
-        {{ .Render "post-compact" }}
-    {{ end }}
+    <div class="taxonomy">
+      <ul class="taxonomy__terms">
+      {{ $type := .Type }}
+      {{ range $key, $value := .Data.Terms.ByCount }}
+        {{ $name := .Name }}
+        {{ $count := .Count }}
+        {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a> {{ $count }}</li>
+        {{ end }}
+      {{ end }}
+      </ul>
     </div>
   </div>
 {{ end }}

@@ -1,0 +1,30 @@
+{{ define "title" }}
+  {{ partial "title-override.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="taxonomy">
+    <header>
+      <h1 class="taxonomy__title">All posts for the {{ humanize .Type | singularize | lower }}<br /><span class="taxonomy__name">{{ .Title }}</span></h1>
+    </header>
+    {{ if .Content }}
+    <!-- Show intro content if a _index.md is present for the type -->
+    <div class="site-list__intro">{{ .Content }}</div>
+    {{ end }}
+
+    <ul class="taxonomy__list">
+    {{ range .Pages }}
+      <li class="post post--compact">
+        <a href="{{ .RelPermalink }}" class="post__title" itemprop="title">{{ .Title }}</a>
+        <div class="post__meta">
+          <time class="post__date" datetime="{{ .Date.Format "2006-01-02" | safeHTML }}" itemprop="dateCreated pubdate datePublished">
+            <span class="post__published">Published:</span>
+            <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
+          </time>
+        </div>
+      </li>
+    {{ end }}
+    </ul>
+
+  </div>
+{{ end }}

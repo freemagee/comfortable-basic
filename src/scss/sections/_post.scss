@@ -232,11 +232,19 @@
 }
 
 .post--compact {
-  display: block;
+  padding: 1rem 0;
+  margin-top: 0;
 
-  .post__header {
-    margin: 0;
-    padding: 0;
+  @include mappy-bp(small) {
+    padding: 1rem;
+  }
+
+  + .post--compact {
+    margin-top: 0;
+
+    @include mappy-bp(small) {
+      margin-top: 1rem;
+    }
   }
 }
 

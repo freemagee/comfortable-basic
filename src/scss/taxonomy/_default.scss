@@ -1,0 +1,45 @@
+.taxonomy {
+  &__title {
+    margin: 0;
+    padding-top: 1.5rem;
+    font-size: 1.414rem;
+    font-family: $font__title;
+    line-height: 1.2;
+    text-align: center;
+
+    @include mappy-bp(medium) {
+      padding-top: 2rem;
+      font-size: 1.999rem;
+    }
+  }
+
+  &__type {
+    color: $color__grey-600;
+  }
+
+  &__name {
+    display: inline-block;
+    margin: 0.25rem 0 0 0;
+    padding: 0.15em 0.3em;
+    color: $color__primary-800;
+    font-size: 1.999rem;
+    background-color: $color__primary-200;
+    border-radius: $setting__default-border-radius;
+
+    @include mappy-bp(medium) {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__intro {
+    padding-top: 1rem;
+
+    > p {
+      margin: 0 0 1.3rem 0;
+    }
+
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
