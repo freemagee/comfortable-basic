@@ -23,7 +23,7 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp": "^4.0.0",
     "gulp-hash": "^4.2.2",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
@@ -33,7 +33,7 @@
     "postcss-font-magician": "^2.2.1",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.5.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.16.4"
   },
   "browserslist": [
     "defaults"
