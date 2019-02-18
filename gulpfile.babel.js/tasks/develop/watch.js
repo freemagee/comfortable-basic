@@ -9,19 +9,16 @@ const changeEvent = (path, type) => {
   notify(`[watcher] File ${filename} was ${type}, compiling...`).write("");
 };
 
-const watcher = watch(
-  paths.styles.files,
-  {
-    delay: 500
-  },
-  () => {
-    console.log("Cooeee");
-  }
-);
-
-// watcher.on("change", path => {
-//   changeEvent(path, "changed");
-// });
-// watcher.description = "Keep an eye on asset changes";
+const watcher = () => {
+  watch(
+    paths.styles.files,
+    {
+      delay: 500
+    },
+    series(styles)
+  ).on("change", path => {
+    changeEvent(path, "changed");
+  });
+};
 
 export default watcher;

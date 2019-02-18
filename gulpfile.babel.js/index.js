@@ -1,12 +1,12 @@
 /* eslint no-console: 0 */
 import { task } from "gulp";
 import colors from "ansi-colors";
-//import develop from "./tasks/develop";
+import develop from "./tasks/develop";
 import build from "./tasks/build";
 
 // Define tasks
 
-//task(develop);
+task(develop);
 task(build);
 
 // Default/fallback task

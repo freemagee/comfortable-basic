@@ -4,7 +4,7 @@ import watch from "./develop/watch";
 
 const develop = parallel(serve, watch);
 
-develop.description = "Create server and process assets";
+develop.description = "Create server and watch assets";
 develop.displayName = "develop";
 
 export default develop;

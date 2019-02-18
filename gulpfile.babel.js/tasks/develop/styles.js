@@ -26,9 +26,9 @@ function styles() {
       )
       .pipe(sourcemaps.init())
       // Sass
-      .pipe(sass())
-      // Process with PostCSS - autoprefix & minify
-      .pipe(postcss(processors))
+      .pipe(sass({ outputStyle: "expanded" }))
+      // Process with PostCSS
+      .pipe(postcss(processors.dev))
       // Hashing for cache busting, hash before generating source map
       .pipe(hash())
       // Write out the source map to the same dir
