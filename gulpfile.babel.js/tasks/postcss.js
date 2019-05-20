@@ -17,7 +17,8 @@ const fontMagicianConfig = {
     }
   },
   foundries: "google",
-  protocol: "https:"
+  protocol: "https:",
+  display: "swap"
 };
 const build = [fontMagician(fontMagicianConfig), postcssPresetEnv(), cssnano()];
 const dev = [fontMagician(fontMagicianConfig), postcssPresetEnv()];
