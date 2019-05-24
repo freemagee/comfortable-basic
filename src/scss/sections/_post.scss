@@ -132,6 +132,11 @@
   &__footer {
     display: flex;
     padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    @include mappy-bp(medium) {
+      padding-bottom: 0;
+    }
 
     &:empty {
       display: none;
@@ -167,7 +172,8 @@
     font-size: 1em;
     font-weight: 600;
     color: $color__grey-500;
-    word-break: normal;
+    //word-break: normal;
+    white-space: nowrap;
     text-decoration: none;
     transition: color 0.2s;
 
