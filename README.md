@@ -2,6 +2,8 @@
 
 Comfortable Basic is a modern, simple Hugo theme. Intended for a blog like site.
 
+View: [Demo using hugoBasicExample repo](https://freemagee.github.io/comfortable-basic/)
+
 ## Features
 
 - Mobile friendly
@@ -44,10 +46,11 @@ pygmentsUseClasses = true
 
 ### TODO
 
-- Optional logo support
-- Use config description on homepage / or use _index.md title
-- Make pagination more visible, to aid user navigation. Add numbers?
-- Host dummy site on gh-pages branch
+- [ ] Optional logo support
+- [ ] Use config description on homepage / or use _index.md title
+- [ ] Make pagination more visible, to aid user navigation. Add numbers?
+- [x] Host demo site on gh-pages branch
+- [ ] Debug why the theme has trouble with hugoBasicExample content
 
 ## Notes
 
