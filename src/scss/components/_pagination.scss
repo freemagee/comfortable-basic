@@ -60,6 +60,27 @@
     padding-right: 1rem;
   }
 
+  &__nav--active {
+    border-color: $color__primary-800;
+    background-color: $color__grey-800;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $color__primary-800;
+      background-color: $color__grey-800;
+      color: #fff;
+    }
+  }
+
+  &__nav--disabled {
+    color: #fff;
+    pointer-events: none;
+    cursor: auto;
+    background-color: $color__grey-200;
+    border-color: $color__grey-200;
+  }
+
   &__nav-icon {
     display: inline-block;
     width: 20px;
