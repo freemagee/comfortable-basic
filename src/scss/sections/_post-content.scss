@@ -113,6 +113,20 @@
     font-size: 0.5em;
   }
 
+  kbd > kbd {
+    background-color: $color__primary-100;
+    border-radius: $setting__default-border-radius;
+    border: 1px solid $color__primary-300;
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: $color__grey-700;
+    display: inline-block;
+    font-size: .85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 5px;
+    white-space: nowrap;
+  }
+
   blockquote {
     margin: 0 0 1.3rem;
     padding: 1rem;
@@ -198,6 +212,10 @@
       text-align: center;
       font-style: italic;
     }
+  }
+
+  mark {
+    background-color: #ffcb05;
   }
 }
 
