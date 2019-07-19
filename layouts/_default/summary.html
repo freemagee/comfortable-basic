@@ -1,6 +1,6 @@
 <section class="post post--summary">
   <header class="post__header">
-    <a href="{{ .RelPermalink }}" class="post__title">{{ .Title }}</a>
+    <a href="{{ .Permalink }}" class="post__title">{{ .Title }}</a>
     <div class="post__meta">
       <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
         <span class="post__published">Published:</span>
@@ -29,7 +29,7 @@
     {{ if .Truncated }}
     <div class="post__truncated">
     <!-- This post includes a read more link, but only if the summary is truncated... -->
-    <a href="{{ .RelPermalink }}" class="post__read-more">
+    <a href="{{ .Permalink }}" class="post__read-more">
       <span class="post__read-more-label">Read full post</span>
       <span class="post__read-more-icon">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"

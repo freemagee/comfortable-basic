@@ -5,30 +5,25 @@
 {{ define "main" }}
   <div class="site-list">
     <header>
-      <h1 class="site-list__title">
-      {{ if ne (.Type) ("posts") }}
-        <!-- Only want the type to appear for taxonomy lists -->
-        <span class="site-list__type">{{ humanize .Type | singularize }}:</span>
-      {{ end }}
-        <span class="site-list__name">{{ .Title }}</span>
-      </h1>
+      <h1 class="taxonomy__title">All <span class="taxonomy__name">{{ .Title }}</span></h1>
     </header>
     {{ if .Content }}
     <!-- Show intro content if a _index.md is present for the type -->
     <div class="site-list__intro">{{ .Content }}</div>
     {{ end }}
 
-    <div class="taxonomy">
-      <ul class="taxonomy__terms">
-      {{ $type := .Type }}
-      {{ range $key, $value := .Data.Terms.ByCount }}
-        {{ $name := .Name }}
-        {{ $count := .Count }}
-        {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-          <li><a href="{{ .Permalink }}">{{ $name }}</a> {{ $count }}</li>
-        {{ end }}
+    <ul class="taxonomy__terms">
+    {{ $type := .Type }}
+    {{ range $key, $value := .Data.Terms.ByCount }}
+      {{ $name := .Name }}
+      {{ $count := .Count }}
+      {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+      <li class="taxonomy__term">
+        <a href="{{ .Permalink }}" class="taxonomy__term-link">{{ $name }}<span class="taxonomy__term-count">{{ $count }} {{ if gt $count 1 }}posts{{ else }}post{{ end }}</span></a>
+      </li>
       {{ end }}
-      </ul>
-    </div>
+    {{ end }}
+    </ul>
+
   </div>
 {{ end }}
