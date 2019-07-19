@@ -1,34 +1,28 @@
+{{ $thisPage := . }}
 {{ $thisPageNumber := .PageNumber }}
-{{ if ne .TotalPages 0}}
+{{ if gt .TotalPages 1}}
 <nav class="pagination">
   <div class="pagination__ctrl">
-    {{ with .First }}
-    <a href="{{ .URL }}" class="pagination__nav pagination__nav--newer"><span class="pagination__nav-icon">
-      <svg version="1.1" id="Chevron_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-      <path d="M12.452,4.516c0.446,0.436,0.481,1.043,0,1.576L8.705,10l3.747,3.908c0.481,0.533,0.446,1.141,0,1.574
-      c-0.445,0.436-1.197,0.408-1.615,0c-0.418-0.406-4.502-4.695-4.502-4.695C6.112,10.57,6,10.285,6,10s0.112-0.57,0.335-0.789
-      c0,0,4.084-4.287,4.502-4.695C11.255,4.107,12.007,4.08,12.452,4.516z" class="pagination__nav-icon-newer" />
-      </svg>
-    </span>First page</a>
-    {{ end }}
-
     <a href="{{ if .HasPrev }}{{ .Prev.URL }}{{ end }}" class="pagination__nav pagination__nav--newer {{ if not .HasPrev }}pagination__nav--disabled{{ end }}"><span class="pagination__nav-icon">
       <svg version="1.1" id="Chevron_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
       <path d="M12.452,4.516c0.446,0.436,0.481,1.043,0,1.576L8.705,10l3.747,3.908c0.481,0.533,0.446,1.141,0,1.574
       c-0.445,0.436-1.197,0.408-1.615,0c-0.418-0.406-4.502-4.695-4.502-4.695C6.112,10.57,6,10.285,6,10s0.112-0.57,0.335-0.789
-      c0,0,4.084-4.287,4.502-4.695C11.255,4.107,12.007,4.08,12.452,4.516z" class="pagination__nav-icon-newer" />
+      c0,0,4.084-4.287,4.502-4.695C11.255,4.107,12.007,4.08,12.452,4.516z" class="pagination__nav-icon-path {{ if not .HasPrev }}pagination__nav-icon-path--disabled{{ end }}" />
       </svg>
-    </span>Newer posts</a>
+    </span>Newer</a>
 
     {{ $scratch := newScratch }}
     {{ $scratch.Set ".ellipsed" false }}
     {{ range .Pagers }}
 
+    {{/* How many pages after this page number */}}
     {{ $right := sub .TotalPages .PageNumber }}
-    {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
-    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub .PageNumber 2)) (lt .PageNumber (add .PageNumber 2))) }}
+    {{/* Is the page number less than/equal to 1 -or- has no more pages after it */}}
+    {{ $showNumber := or (le .PageNumber 1) (eq $right 0) }}
+    {{/* show number is true -or- (page number is greater than current page number minus 3 -and- page number is less than current page number plus 3) equals true */}}
+    {{/* This basically always shows 2 page numbers in front and behind the current page number in the nav */}}
+    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $thisPageNumber 3)) (lt .PageNumber (add $thisPageNumber 3))) }}
 
     {{ if $showNumber }}
       {{ $scratch.Set "__paginator.ellipsed" false }}
@@ -39,32 +33,20 @@
     {{ end }}
 
     {{ if $showNumber }}
-    <a class="pagination__nav {{ if eq .PageNumber $thisPageNumber }}pagination__nav--active{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+    <a class="pagination__nav pagination__nav--number {{ if eq .PageNumber $thisPageNumber }}pagination__nav--active{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
     {{ else if ($scratch.Get "__paginator.shouldEllipse") }}
-    <span class="pagination__nav pagination__nav--disabled" aria-hidden="true">&hellip;</span>
+    <span class="pagination__nav pagination__nav--number pagination__nav--disabled" aria-hidden="true">&hellip;</span>
     {{ end }}
 
     {{ end }}
 
-    <a href="{{ if .HasNext }}{{ .Next.URL }}{{ end }}" class="pagination__nav pagination__nav--older {{ if not .HasNext }}pagination__nav--disabled{{ end }}">Older posts<span class="pagination__nav-icon">
-      <svg version="1.1" id="Chevron_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+    <a href="{{ if .HasNext }}{{ .Next.URL }}{{ end }}" class="pagination__nav pagination__nav--older {{ if not .HasNext }}pagination__nav--disabled{{ end }}">Older<span class="pagination__nav-icon">
+      <svg version="1.1" id="Chevron_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
       <path d="M9.163,4.516c0.418,0.408,4.502,4.695,4.502,4.695C13.888,9.43,14,9.715,14,10s-0.112,0.57-0.335,0.787
       c0,0-4.084,4.289-4.502,4.695c-0.418,0.408-1.17,0.436-1.615,0c-0.446-0.434-0.481-1.041,0-1.574L11.295,10L7.548,6.092
-      c-0.481-0.533-0.446-1.141,0-1.576C7.993,4.08,8.745,4.107,9.163,4.516z" class="pagination__nav-icon-previous" />
+      c-0.481-0.533-0.446-1.141,0-1.576C7.993,4.08,8.745,4.107,9.163,4.516z" class="pagination__nav-icon-path {{ if not .HasNext }}pagination__nav-icon-path--disabled{{ end }}" />
       </svg>
     </span></a>
-
-    {{ with .Last }}
-    <a href="{{ .URL }}" class="pagination__nav pagination__nav--older">Last page<span class="pagination__nav-icon">
-      <svg version="1.1" id="Chevron_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-      <path d="M9.163,4.516c0.418,0.408,4.502,4.695,4.502,4.695C13.888,9.43,14,9.715,14,10s-0.112,0.57-0.335,0.787
-      c0,0-4.084,4.289-4.502,4.695c-0.418,0.408-1.17,0.436-1.615,0c-0.446-0.434-0.481-1.041,0-1.574L11.295,10L7.548,6.092
-      c-0.481-0.533-0.446-1.141,0-1.576C7.993,4.08,8.745,4.107,9.163,4.516z" class="pagination__nav-icon-previous" />
-      </svg>
-    </span></a>
-    {{ end }}
   </div>
 
   <span class="pagination__count">Page {{ .PageNumber }} of {{ .TotalPages }}</span>

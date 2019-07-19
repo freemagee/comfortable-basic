@@ -1134,26 +1134,42 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   color: #3375cc;
 }
 
-.pagination__nav:hover > .pagination__nav-icon .pagination__nav-icon-previous,
-.pagination__nav:focus > .pagination__nav-icon .pagination__nav-icon-previous {
+.pagination__nav:hover > .pagination__nav-icon .pagination__nav-icon-path,
+.pagination__nav:focus > .pagination__nav-icon .pagination__nav-icon-path {
   fill: #3375cc;
 }
 
-.pagination__nav:hover > .pagination__nav-icon .pagination__nav-icon-newer,
-.pagination__nav:focus > .pagination__nav-icon .pagination__nav-icon-newer {
+.pagination__nav:hover > .pagination__nav-icon .pagination__nav-icon-path,
+.pagination__nav:focus > .pagination__nav-icon .pagination__nav-icon-path {
   fill: #3375cc;
 }
 
 .pagination__nav + .pagination__nav {
-  margin-left: 1rem;
+  margin-left: 0.25rem;
 }
 
-.pagination__nav--previous {
-  padding-left: 1rem;
+@media all and (min-width: 48em) {
+  .pagination__nav + .pagination__nav {
+    margin-left: 0.5rem;
+  }
+}
+
+.pagination__nav--number {
+  display: none;
+}
+
+@media all and (min-width: 36em) {
+  .pagination__nav--number {
+    display: inline-block;
+  }
+}
+
+.pagination__nav--older {
+  padding-left: 0.75rem;
 }
 
 .pagination__nav--newer {
-  padding-right: 1rem;
+  padding-right: 0.75rem;
 }
 
 .pagination__nav--active {
@@ -1168,23 +1184,31 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
 }
 
 .pagination__nav--disabled {
-  color: #fff;
+  color: #636363;
   pointer-events: none;
   cursor: auto;
   background-color: #d2d2d2;
   border-color: #d2d2d2;
 }
 
+.pagination__nav--disabled:visited {
+  color: #636363;
+}
+
 .pagination__nav-icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 
-.pagination__nav-icon-previous, .pagination__nav-icon-newer {
+.pagination__nav-icon-path {
   fill: #fff;
   transition: fill 0.2s;
+}
+
+.pagination__nav-icon-path--disabled {
+  fill: #636363;
 }
 
 .post {
@@ -2015,4 +2039,4 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   list-style: none;
 }
 
-/*# sourceMappingURL=style-a199589f.css.map */
+/*# sourceMappingURL=style-c90c6ad9.css.map */

@@ -37,27 +37,39 @@
       color: $color__primary-500;
     }
 
-    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-previous,
-    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-previous {
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-path,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-path {
       fill: $color__primary-500;
     }
 
-    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-newer,
-    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-newer {
+    &:hover > #{ $self }__nav-icon #{ $self }__nav-icon-path,
+    &:focus > #{ $self }__nav-icon #{ $self }__nav-icon-path {
       fill: $color__primary-500;
     }
   }
 
   &__nav + #{ $self }__nav {
-    margin-left: 1rem;
+    margin-left: 0.25rem;
+
+    @include mappy-bp(medium) {
+      margin-left: 0.5rem;
+    }
   }
 
-  &__nav--previous {
-    padding-left: 1rem;
+  &__nav--number {
+    display: none;
+
+    @include mappy-bp(small) {
+      display: inline-block;
+    }
+  }
+
+  &__nav--older {
+    padding-left: 0.75rem;
   }
 
   &__nav--newer {
-    padding-right: 1rem;
+    padding-right: 0.75rem;
   }
 
   &__nav--active {
@@ -74,23 +86,30 @@
   }
 
   &__nav--disabled {
-    color: #fff;
+    color: $color__grey-600;
     pointer-events: none;
     cursor: auto;
     background-color: $color__grey-200;
     border-color: $color__grey-200;
+
+    &:visited {
+      color: $color__grey-600;
+    }
   }
 
   &__nav-icon {
     display: inline-block;
     width: 20px;
     height: 20px;
-    vertical-align: middle;
+    vertical-align: bottom;
   }
 
-  &__nav-icon-previous,
-  &__nav-icon-newer {
+  &__nav-icon-path {
     fill: #fff;
     transition: fill 0.2s;
+  }
+
+  &__nav-icon-path--disabled {
+    fill: $color__grey-600;
   }
 }
