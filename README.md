@@ -2,7 +2,9 @@
 
 Comfortable Basic is a modern, simple Hugo theme. Intended for a blog like site.
 
-View: [Demo using hugoBasicExample repo](https://freemagee.github.io/comfortable-basic/)
+View: [Demo using hugoBasicExample](https://freemagee.github.io/comfortable-basic/)
+
+![Screenshot](https://github.com/freemagee/comfortable-basic/raw/master/images/screenshot.png)
 
 ## Features
 
