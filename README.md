@@ -57,7 +57,7 @@ This theme is meant for a simple blog with posts and a about page. To get the mo
     +---about
     |       _index.md # This is the about page content
     |
-    \---posts
+    \---post
             # all markdown posts
 ```
 
