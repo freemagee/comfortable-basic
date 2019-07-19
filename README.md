@@ -48,9 +48,9 @@ pygmentsUseClasses = true
 
 - [ ] Optional logo support
 - [ ] Use config description on homepage / or use _index.md title
-- [ ] Make pagination more visible, to aid user navigation. Add numbers?
+- [x] Make pagination more visible, to aid user navigation. Add numbers?
 - [x] Host demo site on gh-pages branch
-- [ ] Debug why the theme has trouble with hugoBasicExample content
+- [x] Debug why the theme has trouble with hugoBasicExample content
 
 ## Notes
 
