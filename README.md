@@ -73,8 +73,5 @@ A flag has been added to the theme config `useHighlightJS = true` that can be se
 ### TODO
 
 - [ ] Optional logo support
-- [ ] Use config description on homepage / or use _index.md title
-- [x] Make pagination more visible, to aid user navigation. Add numbers?
-- [x] Host demo site on gh-pages branch
-- [x] Debug why the theme has trouble with hugoBasicExample content
 - [ ] Add image type posts
+- [ ] Handle multiple pages

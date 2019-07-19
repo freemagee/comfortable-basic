@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/freemagee/comfortable-basic/blob/master/LICENSE"
 description = "Comfortable Basic Hugo theme for simple blogging"
 homepage = https://github.com/freemagee/comfortable-basic"
-tags = ["Responsive", "Simple", "Clean", "Light", "White", "Blog"]
+tags = ["Responsive", "Simple", "Clean", "Light", "Minimalist", "Blog", "Personal"]
 features = ["Responsive", "One Column", "Blog"]
 min_version = 0.43
 
