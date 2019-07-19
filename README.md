@@ -45,6 +45,31 @@ pygmentsUseClasses = true
   tag = "tags"
 ```
 
+### Content Architecture Example
+
+This theme is meant for a simple blog with posts and a about page. To get the most from it is recommended to structure your **content** folder like this:
+
+```
++---content
+    |   _index.md # This is the intro, it will appear at the
+    |               top of the site on the homepage only
+    |
+    +---about
+    |       _index.md # This is the about page content
+    |
+    \---posts
+            # all markdown posts
+```
+
+Simple as that.
+
+## Notes
+
+Recently added some better code syntax highlighting. Hugo has really good built-in highlighting using [Chroma](https://gohugo.io/content-management/syntax-highlighting/). Ran into some formatting issues with some code and extra white space being added. So have added [Highlightjs](https://highlightjs.org/) as an alternative. This unfortunately has bumped the theme file size up with the extra JavaScript, and some additional fonts. So that is why Comfortable Basic is lightweight(ish) at around > 300kb.
+
+**Performance update**
+A flag has been added to the theme config `useHighlightJS = true` that can be set to false to disable *Highlightjs* and just use Hugo's default syntax highlighting. This can save about 90Kb.
+
 ### TODO
 
 - [ ] Optional logo support
@@ -52,10 +77,4 @@ pygmentsUseClasses = true
 - [x] Make pagination more visible, to aid user navigation. Add numbers?
 - [x] Host demo site on gh-pages branch
 - [x] Debug why the theme has trouble with hugoBasicExample content
-
-## Notes
-
-Recently added some better code syntax highlighting. Hugo has really good built-in highlighting using [Chroma](https://gohugo.io/content-management/syntax-highlighting/). But I ran into some formatting issues with some code and extra white space being added. So I added [Highlightjs](https://highlightjs.org/) as an alternative. This unfortunately has bumped the theme file size up with the extra JavaScript, and some additional fonts. So that is why Comfortable Basic is lightweight(ish) at around > 300kb. I will investigate some performance optimisations to minimise file size.
-
-**Performance update**
-A flag has been added to the theme config `useHighlightJS = true` that can be set to false to disable *Highlightjs* and just use Hugo's default syntax highlighting. This can save about 90Kb.
+- [ ] Add image type posts
