@@ -1,3 +1,4 @@
+{{ if .Site.Params.UseHighlightJS }}
 <script src="{{ .Site.BaseURL }}js/highlight.pack.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", event => {
@@ -7,3 +8,4 @@
     });
   });
 </script>
+{{ end }}

@@ -14,6 +14,10 @@
 
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "style.css" }}" />
 
+  {{ if .Site.Params.UseHighlightJS }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "code-highlighting.css" }}" />
+  {{ end }}
+
 </head>
 <body>
   {{ partial "site-header.html" . }}
