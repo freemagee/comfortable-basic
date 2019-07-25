@@ -1,14 +1,14 @@
 .post-siblings {
   $self: &;
-  display: flex;
-  padding-top: 2rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 2rem 0 0;
+  // display: flex;
+  // padding-top: 2rem;
+  // align-items: center;
+  // justify-content: center;
+  // flex-wrap: wrap;
 
   &__more {
-    padding-bottom: 1rem;
-    flex: 2 100%;
+    display: block;
     text-align: center;
 
     &::before {
@@ -19,6 +19,13 @@
       margin: 0 auto 1rem;
       background-color: $color__primary-500;
     }
+  }
+
+  &__ctrl {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
   }
 
   &__nav {
@@ -37,7 +44,11 @@
   }
 
   &__nav + #{ $self }__nav {
-    margin-left: 1rem;
+    margin-left: 0.25rem;
+
+    @include mappy-bp(medium) {
+      margin-left: 0.5rem;
+    }
   }
 
   &__nav--previous {
