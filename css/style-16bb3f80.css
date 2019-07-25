@@ -1328,16 +1328,11 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
 }
 
 .post-siblings {
-  display: flex;
-  padding-top: 2rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 2rem 0 0;
 }
 
 .post-siblings__more {
-  padding-bottom: 1rem;
-  flex: 2 100%;
+  display: block;
   text-align: center;
 }
 
@@ -1348,6 +1343,13 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   height: 4px;
   margin: 0 auto 1rem;
   background-color: #3375cc;
+}
+
+.post-siblings__ctrl {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .post-siblings__nav {
@@ -1420,7 +1422,13 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
 }
 
 .post-siblings__nav + .post-siblings__nav {
-  margin-left: 1rem;
+  margin-left: 0.25rem;
+}
+
+@media all and (min-width: 48em) {
+  .post-siblings__nav + .post-siblings__nav {
+    margin-left: 0.5rem;
+  }
 }
 
 .post-siblings__nav--previous {
@@ -1640,4 +1648,4 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   }
 }
 
-/*# sourceMappingURL=style-253b86c5.css.map */
+/*# sourceMappingURL=style-16bb3f80.css.map */
