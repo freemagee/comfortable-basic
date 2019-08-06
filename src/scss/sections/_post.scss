@@ -79,29 +79,34 @@
     }
   }
 
-  &__date {
+  &__date,
+  &__read-time {
     display: block;
     padding: 0;
     font-size: 1em;
-    color: $color__grey-700;
+    white-space: nowrap;
+    color: $color__grey-500;
 
     @include mappy-bp(small) {
       padding: 0 0.5rem 0 0;
     }
 
     @include mappy-bp(medium) {
-      padding: 0 1.5rem 0 0;
+      padding: 0 1rem 0 0;
       font-size: 0.707em;
     }
   }
 
-  &__published {
-    font-weight: 600;
-    color: $color__grey-600;
+  &__date-icon,
+  &__read-time-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: text-bottom;
   }
 
-  &__published-value {
-    white-space: nowrap;
+  &__meta-icon {
+    fill: $color__primary-500;
   }
 
   &__categories {

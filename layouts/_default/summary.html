@@ -1,19 +1,7 @@
 <section class="post post--summary">
   <header class="post__header">
     <a href="{{ .Permalink }}" class="post__title">{{ .Title }}</a>
-    <div class="post__meta">
-      <time class="post__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-        <span class="post__published">Published:</span>
-        <span class="post__published-value">{{ .Date.Format "2006-01-02" }}</span>
-      </time>
-      {{ if .Params.categories }}
-      <ul class="post__categories">
-        {{ range $index, $category := .Params.categories }}
-        <li class="post__category"><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a></li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
+    {{ partial "post-meta.html" . }}
   </header>
   <div class="post-content">
     {{ .Summary }}
@@ -29,7 +17,7 @@
     {{ if .Truncated }}
     <div class="post__truncated">
     <!-- This post includes a read more link, but only if the summary is truncated... -->
-    <a href="{{ .Permalink }}" class="post__read-more">
+    <a href="{{ .Permalink }}" class="post__read-more" rel="nofollow">
       <span class="post__read-more-label">Read full post</span>
       <span class="post__read-more-icon">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
