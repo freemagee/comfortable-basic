@@ -1,17 +1,13 @@
 .taxonomy__terms {
-  margin: 2rem 0 0 0;
+  display: flex;
+  margin: 2rem -0.5rem 0;
   padding: 0;
+  flex-wrap: wrap;
   list-style: none;
-
-  @include mappy-bp(small) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 .taxonomy__term {
-  $self: &;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0.5rem;
 
   &-link {
     @include basic-button;
@@ -24,11 +20,5 @@
     color: $color__primary-800;
     background-color: $color__primary-100;
     border-radius: 2px;
-  }
-
-  & + #{ $self } {
-    @include mappy-bp(small) {
-      margin-left: 0.5rem;
-    }
   }
 }

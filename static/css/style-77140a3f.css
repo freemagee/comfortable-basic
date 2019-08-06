@@ -1562,20 +1562,15 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
 }
 
 .taxonomy__terms {
-  margin: 2rem 0 0 0;
+  display: flex;
+  margin: 2rem -0.5rem 0;
   padding: 0;
+  flex-wrap: wrap;
   list-style: none;
 }
 
-@media all and (min-width: 36em) {
-  .taxonomy__terms {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
 .taxonomy__term {
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0.5rem;
 }
 
 .taxonomy__term-link {
@@ -1645,10 +1640,4 @@ p, h1, h2, h3, h4, h5, h6, li, th, td, a {
   border-radius: 2px;
 }
 
-@media all and (min-width: 36em) {
-  .taxonomy__term + .taxonomy__term {
-    margin-left: 0.5rem;
-  }
-}
-
-/*# sourceMappingURL=style-a52fed6b.css.map */
+/*# sourceMappingURL=style-77140a3f.css.map */

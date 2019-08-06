@@ -1,7 +1,7 @@
 <aside class="post-siblings">
   <nav class="post-siblings__ctrl">
     {{ with .NextInSection }}
-    <a class="post-siblings__nav post-siblings__nav--next" href="{{ .Permalink }}"><span class="post-siblings__nav-icon">
+    <a class="post-siblings__nav post-siblings__nav--next" href="{{ .Permalink }}" rel="nofollow"><span class="post-siblings__nav-icon">
       <svg version="1.1" id="Chevron_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
       <path d="M12.452,4.516c0.446,0.436,0.481,1.043,0,1.576L8.705,10l3.747,3.908c0.481,0.533,0.446,1.141,0,1.574
@@ -12,7 +12,7 @@
     {{ end }}
 
     {{ with .PrevInSection }}
-    <a class="post-siblings__nav post-siblings__nav--previous" href="{{ .Permalink }}">Previous<span class="post-siblings__nav-icon">
+    <a class="post-siblings__nav post-siblings__nav--previous" href="{{ .Permalink }}" rel="nofollow">Previous<span class="post-siblings__nav-icon">
       <svg version="1.1" id="Chevron_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
      y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
       <path d="M9.163,4.516c0.418,0.408,4.502,4.695,4.502,4.695C13.888,9.43,14,9.715,14,10s-0.112,0.57-0.335,0.787

@@ -1,12 +1,13 @@
-{{/* Default list page */}}
-{{ define "title" }}
-  {{ partial "title-override.html" . }}
-{{ end }}
+{{ define "title" }}{{ partial "title-override.html" . }}{{ end }}
 
 {{ define "main" }}
   <div class="taxonomy">
     <header>
-      <h1 class="taxonomy__title">All <span class="taxonomy__name">{{ .Title }}</span></h1>
+      {{ if eq .Type "post" }}
+        <h1 class="taxonomy__title">All <span class="taxonomy__name">{{ humanize .Title | lower }}</span></h1>
+      {{ else }}
+        <h1 class="taxonomy__title">All posts for the {{ humanize .Type | singularize | lower }}<br /><span class="taxonomy__name">{{ .Title }}</span></h1>
+      {{ end }}
     </header>
     {{ if .Content }}
     <!-- Show intro content if a _index.md is present for the type -->
