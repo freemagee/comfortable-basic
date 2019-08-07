@@ -30,8 +30,10 @@
   {{ if .Params.categories }}
   <ul class="post__categories">
     {{ range $index, $category := .Params.categories }}
+    {{ $category := . | urlize }}
+    {{ $categorylink := delimit (slice "categories" $category) "/" }}
     <li class="post__category">
-      <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="post__category-link">{{ $category }}</a>
+      <a href="{{ $categorylink | relURL }}" class="post__category-link">{{ $category }}</a>
     </li>
     {{ end }}
   </ul>

@@ -13,7 +13,9 @@
       {{ if .Params.tags }}
       <ul class="post__tags">
         {{ range $index, $tag := .Params.tags }}
-        <li class="post__tag"><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/" class="post__tag-link"><span class="post__tag-label">#</span>{{ $tag }}</a></li>
+        {{ $tag := . | urlize }}
+        {{ $taglink := delimit (slice "tags" $tag) "/" }}
+        <li class="post__tag"><a href="{{ $taglink | relURL }}" class="post__tag-link"><span class="post__tag-label">#</span>{{ $tag }}</a></li>
         {{ end }}
       </ul>
       {{ end }}

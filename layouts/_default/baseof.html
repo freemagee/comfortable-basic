@@ -10,12 +10,16 @@
   <meta name="author" content="{{ .Site.Params.Author }}">
   <meta name="referrer" content="no-referrer-when-downgrade">
 
-  <link href="{{ .Site.BaseURL }}images/favicon/favicon-16x16.png" rel="shortcut icon" type="image/png">
+  <link href="{{ "images/favicon/favicon-16x16.png" | relURL }}" rel="shortcut icon" type="image/png">
 
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "style.css" }}" />
+  {{ $csshash := index .Site.Data.css.hash "style.css" }}
+  {{ $csslink := delimit (slice "css" $csshash) "/" }}
+  <link rel="stylesheet" href="{{ $csslink | relURL }}" />
 
   {{ if .Site.Params.UseHighlightJS }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ index .Site.Data.css.hash "code-highlighting.css" }}" />
+  {{ $csshash := index .Site.Data.css.hash "code-highlighting.css" }}
+  {{ $csslink := delimit (slice "css" $csshash) "/" }}
+  <link rel="stylesheet" href="{{ $csslink | relURL }}" />
   {{ end }}
 
 </head>
@@ -31,7 +35,7 @@
       <footer class="site-footer">
         <div class="site-footer__inner">
           <p class="site-footer__copyright">&copy; {{ now.Format "2006" }}{{ if (isset .Site.Params "authorwebsite") }}&nbsp;<a href="{{ .Site.Params.AuthorWebsite }}">{{ .Site.Params.Author }}</a>
-          {{ end }}. Icons from <a href="http://entypo.com">Entypo+</a>. Made with <a href="https://gohugo.io/" class="site-footer__hugo-logo"><img src="{{ .Site.BaseURL }}images/hugo-logo.png" alt="Hugo logo" width="22" height="22"></a></p>
+          {{ end }}. Icons from <a href="http://entypo.com">Entypo+</a>. Made with <a href="https://gohugo.io/" class="site-footer__hugo-logo"><img src="{{ "images/hugo-logo.png" | relURL }}" alt="Hugo logo" width="22" height="22"></a></p>
         </div>
       </footer>
     </div>

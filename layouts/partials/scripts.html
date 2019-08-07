@@ -1,5 +1,5 @@
 {{ if .Site.Params.UseHighlightJS }}
-<script src="{{ .Site.BaseURL }}js/highlight.pack.js"></script>
+<script src="{{ "js/highlight.pack.js" | relURL }}"></script>
 <script>
   document.addEventListener("DOMContentLoaded", event => {
     document.documentElement.classList.remove("no-js");
