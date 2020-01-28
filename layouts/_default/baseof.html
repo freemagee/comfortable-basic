@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{- .Site.Title -}}{{ end }}</title>
   <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.Description }}{{else}}{{.Description}}{{end}}" property="og:description">
-  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  <meta name="keywords" content="{{if .IsHome}}{{ delimit $.Site.Params.Keywords ", " }}{{else}}{{ delimit .Keywords ", " }}{{end}}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="{{ .Site.Params.Author }}">
   <meta name="referrer" content="no-referrer-when-downgrade">
