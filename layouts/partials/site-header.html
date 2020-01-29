@@ -4,7 +4,7 @@
 {{ end }}
 <header class="site-header">
   <section class="site-header__ident">
-    <a href="{{ .Site.BaseURL }}" class="site-header__link">{{- .Site.Title -}}</a>
+    <a href="{{ .Site.BaseURL }}" class="site-header__link">{{- .Site.Params.Title -}}</a>
   </section>
   <nav class="site-header__nav">
   {{ with .Site.GetPage "about" }}
