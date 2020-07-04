@@ -5,11 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.Description }}{{else}}{{.Description}}{{end}}" property="og:description">
+  <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.Description }}{{else}}{{.Description}}{{end}}">
   <meta name="keywords" content="{{if .IsHome}}{{ delimit $.Site.Params.Keywords ", " }}{{else}}{{ delimit .Keywords ", " }}{{end}}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="{{ .Site.Params.Author }}">
   <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta property="og:title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/misc/screenshot.png">
+  <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.Description }}{{else}}{{.Description}}{{end}}">
+  <meta property="og:url" content="{{ .Permalink }}">
 
   <link href="{{ "images/favicon/favicon-16x16.png" | relURL }}" rel="shortcut icon" type="image/png">
 
