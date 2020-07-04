@@ -1,6 +1,5 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Pages "Type" "post") }}
-  {{ if eq $paginator.PageNumber 1 }}
+  {{ if eq .Paginator.PageNumber 1 }}
     {{ if .Content }}
     <div class="site-intro">
       <header class="site-intro__header">
@@ -12,10 +11,10 @@
   {{ end }}
 
   <div class="posts posts--home">
-    {{ range $paginator.Pages }}
+    {{ range .Paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}
   </div>
 
-  {{ partial "pagination.html" $paginator }}
+  {{ partial "pagination.html" .Paginator }}
 {{ end }}
